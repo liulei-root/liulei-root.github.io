@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -531,175 +531,175 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Java基础语法-说说集合框架的简单学习思路"><a href="#Java基础语法-说说集合框架的简单学习思路" class="headerlink" title="Java基础语法 说说集合框架的简单学习思路"></a>Java基础语法 说说集合框架的简单学习思路</h2><h4 id="1-自学集合的思路是什么？从哪几个方面快速学完集合框架知识？"><a href="#1-自学集合的思路是什么？从哪几个方面快速学完集合框架知识？" class="headerlink" title="1. 自学集合的思路是什么？从哪几个方面快速学完集合框架知识？"></a>1. 自学集合的思路是什么？从哪几个方面快速学完集合框架知识？</h4><p>在学习集合之前，我们先通过下面这段代码回忆一下数组的使用：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Array</span> <span class="token punctuation">{</span>
-<span class="token comment">//根据下标查询元素</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">queryElementByIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">return</span> arr<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Array {
+//根据下标查询元素
+public static int queryElementByIndex(int[] arr, int index) {
+	return arr[index];
+}
 
-<span class="token comment">//根据元素查找下标</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">queryIndexByElement</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> ele<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 用来记录下标的变量</span>
-	<span class="token comment">// 1：遍历所有的元素</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// 2 用你要查找的元素和所有的元素做==比较</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> ele<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token comment">// 3 相等判断成立，记录当前元素的下标</span>
-			index <span class="token operator">=</span> i<span class="token punctuation">;</span><span class="token comment">// 记录当前元素的下标</span>
-			<span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// 后面元素就不用判断了</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> index<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//根据元素查找下标
+public static int queryIndexByElement(int[] arr, int ele) {
+	int index = -1; // 用来记录下标的变量
+	// 1：遍历所有的元素
+	for (int i = 0; i &lt; arr.length; i++) {
+		// 2 用你要查找的元素和所有的元素做==比较
+		if (arr[i] == ele) {
+			// 3 相等判断成立，记录当前元素的下标
+			index = i;// 记录当前元素的下标
+			break; // 后面元素就不用判断了
+		}
+	}
+	return index;
+}
 
-<span class="token comment">//求数组的最大值</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">maxValue</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// 1 假设第一个元素是最大值</span>
-	<span class="token keyword">int</span> max <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token comment">// 2:遍历数组</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// 3 用这个个最大值和后面的元素做大于比较</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token comment">// 4如果后面的元素比这个最大值还大，那么后面的元素就是最大值</span>
-			max <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> max<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//求数组的最大值
+public static int maxValue(int[] arr) {
+	// 1 假设第一个元素是最大值
+	int max = arr[0];
+	// 2:遍历数组
+	for (int i = 1; i &lt; arr.length; i++) {
+		// 3 用这个个最大值和后面的元素做大于比较
+		if (arr[i] &gt; max) {
+			// 4如果后面的元素比这个最大值还大，那么后面的元素就是最大值
+			max = arr[i];
+		}
+	}
+	return max;
+}
 
-<span class="token comment">//求数组的最小值</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">minValue</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token comment">// 1 假设第一个元素是最小值</span>
-	<span class="token keyword">int</span> min <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token comment">// 2:遍历数组</span>
-	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-		<span class="token comment">// 3 用后面的元素这个最小值和做小于比较</span>
-		<span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> min<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token comment">// 4如果后面的元素比这个最小值还小，那么后面的元素就是最小值</span>
-			min <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">return</span> min<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//求数组的最小值
+public static int minValue(int[] arr) {
+	// 1 假设第一个元素是最小值
+	int min = arr[0];
+	// 2:遍历数组
+	for (int i = 1; i &lt; arr.length; i++) {
+		// 3 用后面的元素这个最小值和做小于比较
+		if (arr[i] &lt; min) {
+			// 4如果后面的元素比这个最小值还小，那么后面的元素就是最小值
+			min = arr[i];
+		}
+	}
+	return min;
+}
 
-<span class="token comment">/**
+/**
  *  给数组添加元素
  * @param arr
  * @param ele
  * @param index
  * @return  返回新的数组
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">addElement</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> ele<span class="token punctuation">,</span> <span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ */
+public static int[] addElement(int[] arr, int ele, int index) {
 	
 
-	<span class="token comment">// 1：新建一个数组，长度是原数组长度+1 数组扩容</span>
-	<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>arr<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>index<span class="token operator">&gt;=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> index<span class="token operator">&lt;</span>newArr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	// 1：新建一个数组，长度是原数组长度+1 数组扩容
+	int[] newArr = new int[arr.length + 1];
+	if(index&gt;=0 &amp;&amp; index&lt;newArr.length){
 
-		<span class="token comment">// 2 拿到下标为3的前面的元素，放到新数组按照0 1 2 顺序依次存放</span>
-		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> index<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			newArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
+		// 2 拿到下标为3的前面的元素，放到新数组按照0 1 2 顺序依次存放
+		for (int i = 0; i &lt; index; i++) {
+			newArr[i] = arr[i];
+		}
 
-		<span class="token comment">// 3 把要添加的元素100放入新数组下标为3的位置</span>
-		newArr<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+		// 3 把要添加的元素100放入新数组下标为3的位置
+		newArr[index] = 100;
 
-		<span class="token comment">// 4 拿到下标为3的后面的元素，放到新数组按照 4 5 顺序依次存放</span>
+		// 4 拿到下标为3的后面的元素，放到新数组按照 4 5 顺序依次存放
 
-		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> index<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			newArr<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"索引超出范围"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token comment">//超出范围，返回旧数组</span>
-		<span class="token keyword">return</span> arr<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>		
-	<span class="token comment">// 5:返回新数组</span>
-	<span class="token keyword">return</span> newArr<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+		for (int i = index; i &lt; arr.length; i++) {
+			newArr[i + 1] = arr[i];
+		}
+	}else{
+		System.out.println("索引超出范围");
+		//超出范围，返回旧数组
+		return arr;
+	}		
+	// 5:返回新数组
+	return newArr;
+}
 
-<span class="token comment">/**
+/**
  * 根据下标删除元素
  * @param arr
  * @param index
  * @return  原数组
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">delEleByIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> index<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ */
+public static int[] delEleByIndex(int[] arr,int index){
 	
-	<span class="token keyword">if</span><span class="token punctuation">(</span>index<span class="token operator">&gt;=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> index<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token comment">//1：找到下标为2的元素，后面的元素依次覆盖前面的元素</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> index<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
+	if(index&gt;=0 &amp;&amp; index&lt;arr.length){
+		//1：找到下标为2的元素，后面的元素依次覆盖前面的元素
+		for(int i = index;i&lt;arr.length-1;i++){
+			arr[i] = arr[i+1];
+		}
 		
-		<span class="token comment">//2：把最后一位赋值为0</span>
-		arr<span class="token punctuation">[</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		//2：把最后一位赋值为0
+		arr[arr.length-1] = 0;
 		
-	<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"没有此下标"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token comment">//3 返回删除后的数组</span>
-	<span class="token keyword">return</span> arr<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+	}else{
+		System.out.println("没有此下标");
+	}
+	//3 返回删除后的数组
+	return arr;
+}
 
-<span class="token comment">/**
+/**
  * 根据元素删除元素
  * @param arr
  * @param ele
  * @return  下标
- */</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">delEleByEle</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> ele<span class="token punctuation">)</span><span class="token punctuation">{</span>
-	   <span class="token comment">//1 :定义删除元素的下标</span>
-		<span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+ */
+public static int delEleByEle(int[] arr,int ele){
+	   //1 :定义删除元素的下标
+		int index = -1;
 		
-		<span class="token comment">//2：用你要删除的元素和数组里面的每一个元素做==比较</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>ele<span class="token operator">==</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			  <span class="token comment">//3：找到要删除的元素后，记录下当前元素的下标</span>
-				index <span class="token operator">=</span> i<span class="token punctuation">;</span>
-				<span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">//后面就不要比较了</span>
-			<span class="token punctuation">}</span>
-		<span class="token punctuation">}</span>
-		<span class="token comment">//如果index是-1，直接返回，不需要移位</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>index<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			<span class="token keyword">return</span> index<span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-		 <span class="token comment">//4：然后后面的下标依次向前移位</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> index<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
+		//2：用你要删除的元素和数组里面的每一个元素做==比较
+		for(int i = 0;i&lt;arr.length;i++){
+			if(ele==arr[i]){
+			  //3：找到要删除的元素后，记录下当前元素的下标
+				index = i;
+				break; //后面就不要比较了
+			}
+		}
+		//如果index是-1，直接返回，不需要移位
+		if(index==-1){
+			return index;
+		}
+		 //4：然后后面的下标依次向前移位
+		for(int i = index;i&lt;arr.length-1;i++){
+			arr[i] = arr[i+1];
+		}
 
-		<span class="token comment">//5：把最后一位置为0</span>
-		arr<span class="token punctuation">[</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-		<span class="token comment">//6  返回数组的下标即可</span>
-		<span class="token keyword">return</span> index<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+		//5：把最后一位置为0
+		arr[arr.length-1] = 0;
+		//6  返回数组的下标即可
+		return index;
+}
 
-<span class="token comment">//主函数</span>
-<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+//主函数
+public static void main(String[] args) {
+	int[] arr = { 10, 20, 300, 40, 50 };
 	
-	<span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token function">delEleByEle</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>index<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-			<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"没有此元素"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
+	int index = delEleByEle(arr,300);
+	if(index!=-1){
+		for (int i : arr) {
+			System.out.println(i);
+		}
+	}else{
+		System.out.println("没有此元素");
+	}
 	
-	<span class="token comment">/*arr = delEleByIndex(arr,2);
+	/*arr = delEleByIndex(arr,2);
 	for (int i : arr) {
 		System.out.println(i);
 	}
-	*/</span>
+	*/
 	
-     <span class="token comment">/*int[] newArr = addElement(arr,100,-12);
+     /*int[] newArr = addElement(arr,100,-12);
 	for (int i : newArr) {
 		System.out.println(i);
-	}*/</span>
+	}*/
 	
-	<span class="token comment">/*int max = maxValue(arr);
+	/*int max = maxValue(arr);
 	int min = minValue(arr);
 	System.out.println("最大值是:" + max);
 	System.out.println("最小值是:" + min);
@@ -707,18 +707,18 @@
 	/
 	* int index = 0; int ele = queryElementByIndex(arr,index);
 	* System.out.println(“下标为”+index+“的元素是:”+ele);
-	*/</span>
+	*/
 
-	<span class="token comment">/*
+	/*
 	 * Scanner sc= new Scanner(System.in);
 	 * System.out.println("请输入你要查询的元素值"); int ele = sc.nextInt(); //你要查找的元素
 	 * int index = queryIndexByElement(arr,ele); // 4:没有匹配成功,没有此元素
 	 * if(index!=-1){ System.out.println("元素"+ele+"的下标是:"+index); }else{
 	 * System.out.println("没有此元素"); }
-	 */</span>
+	 */
 
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这一系列的操作有没有很熟悉，不管是在刚开始学习的过程中还是平时在使用的过程中，你会发现基本上使用到数组也就这些操作了，总结一下其实就四个字：增删改查。反思片刻之后是否恍然大悟？其实java语言大部分的操作就是在对数据进行处理，而处理数据最简单且用的最多的方式其实就是增删改查了。</p>
 <p>说到这里，相信大家就能明白我们接下来学习集合的切入点是什么了吧。没错，就是学习集合框架中每一种集合它对数据的处理方法有哪些，说白了就是集合如何对数据进行增删改查。OK，有了思路之后，我们开始进入集合框架的学习。</p>
 <h4 id="2-简单了解集合框架的层次结构"><a href="#2-简单了解集合框架的层次结构" class="headerlink" title="2. 简单了解集合框架的层次结构"></a>2. 简单了解集合框架的层次结构</h4><p>Java的容器类主要由两个接口派生而出：Collection和Map，Collection和Map是Java集合框架的根接口，这两个接口又包含了一些子接口或实现类。通过Collection与Map接口导出其他子接口及实现类的框架示意图如下图所示：</p>
@@ -1345,7 +1345,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

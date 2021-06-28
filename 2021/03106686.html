@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -523,9 +523,9 @@
 <p>而字段(field)，通常叫做“类成员”，或 “类成员变量”，有时也叫“域”，理解为“数据成员”，用来承载数据的。这两个概念是完全不同的。</p>
 <p>虽然答案有了，但是你理解了多少呢？</p>
 <h4 id="1、什么是字段？"><a href="#1、什么是字段？" class="headerlink" title="1、什么是字段？"></a>1、什么是字段？</h4><p>类成员(字段)，通常是在类中定义的类成员变量，例如：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
-  <span class="token keyword">private</span> <span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class A{
+  private String s = "123";
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>从上面的代码中我们可以看到，<strong>A类中有一个成员变量叫做s，也可以这样说：A类有一个字段s</strong>。</p>
 <ul>
 <li>字段一般用来承载数据，所以为了安全性，一般定义为私有的。</li>
@@ -533,9 +533,9 @@
 </ul>
 <p>既然是私有，那外界怎么访问呢? 当然是通过Java的属性方法了！</p>
 <h4 id="2、什么是属性？"><a href="#2、什么是属性？" class="headerlink" title="2、什么是属性？"></a>2、什么是属性？</h4><p>属性只局限于类中方法的声明，并不与类中其他成员相关，属于JavaBean的范畴。例如：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">setA</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">void setA(String s){}
 
-<span class="token class-name">String</span> <span class="token function">getA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+String getA(){}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>当一个类中拥有这样一对方法时，我们可以说，**这个类中拥有一个可读写的a属性(注意是小写a)**。如果去掉了set的方法，则是可读属性，反之亦然。</p>
 <p> 其规则是：去掉get或set后其剩余的字符串，如果第二个字母是小写的，则把第一个字母也变成小写，例如： </p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">getAge----&gt;age 
@@ -543,33 +543,33 @@
 getCPU----&gt;CPU <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>比如有下面这个类: </p>
 <p>注：下面的User类不是JavaBean。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> id<span class="token punctuation">;</span> <span class="token comment">//私有字段</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span> <span class="token comment">//私有字段</span>
-    <span class="token keyword">private</span> <span class="token class-name">String</span> identifier <span class="token operator">=</span> <span class="token string">"440282199008098076"</span><span class="token punctuation">;</span> <span class="token comment">//私有字段</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class User {
+    private String id; //私有字段
+    private String name; //私有字段
+    private String identifier = "440282199008098076"; //私有字段
 
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//id的可读属性</span>
-        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//id的可写属性</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public String getId() { //id的可读属性
+        return id;
+    }
+    public void setId(String id) { //id的可写属性
+        this.id = id;
+    }
 
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//name的可读属性</span>
-        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//name的可写属性</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public String getName() { //name的可读属性
+        return name;
+    }
+    public void setName(String name) { //name的可写属性
+        this.name = name;
+    }
 
-    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getIdentifier</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">//identifier只有一个get方法，所以它是只读属性</span>
-        <span class="token keyword">return</span> identifier<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public String getIdentifier() { //identifier只有一个get方法，所以它是只读属性
+        return identifier;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> SHOW_STATUS_YES <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//公共字段</span>
-    <span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> <span class="token class-name">SHOW_STATUS_No</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//公共字段</span>
+    public final static Integer SHOW_STATUS_YES = 1; //公共字段
+    public final static Integer SHOW_STATUS_No = 0; //公共字段
 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>当我操作这个类时，比如调用getName()方法时，我们做的操作是获得name的属性，调用setName(String name)方法时做的操作是设置name的属性，因为对我们来说name字段是私有的，我们操作该Person类时根本看不到有这个name字段 。</p>
 </li>
@@ -585,24 +585,24 @@ getCPU----&gt;CPU <span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li><p>更形象的说就是：属性是对字段的封装，供外部访问。</p>
 </li>
 <li><p>通常属性将相应的私有字段通过封装成公共属性，以便于外界访问和修改。当然你在封装成属性时，也可以置该属性为只读，可读写等等权限。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span><span class="token comment">//字段a，定义字段是直接赋值，没有属性set/get</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> b<span class="token punctuation">;</span><span class="token comment">//字段b，没有属性set/get</span>
-    <span class="token keyword">public</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">//通过构造器为字段b赋值</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//定义方法</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token string">"-----"</span><span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">Test2</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Test</span> test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建对象</span>
-        test<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//调用方法</span>
-        test<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">//修改Test类中private修饰的字段a的值</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test {
+    private int a = 5;//字段a，定义字段是直接赋值，没有属性set/get
+    private int b;//字段b，没有属性set/get
+    public Test(){
+        this.b=10;//通过构造器为字段b赋值
+    }
+    public void print(){//定义方法
+        System.out.println(a+"-----"+b);
+    }
+}
+class Test2{
+    public static void main(String[] args) {
+        Test test = new Test();//创建对象
+        test.print();//调用方法
+        test.a=10;//修改Test类中private修饰的字段a的值
+        System.out.println(test.a);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>上述代码由于Test类中 a 字段是private修饰的私有成员，没有为 a 变量创建set/get属性，所以Test类外，无法访问字段 a ，也就是说无法读写字段 a ，所以上诉代码运行报错。</p>
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/JavaPropertyAndField.png"></p>
 </li>
@@ -906,12 +906,12 @@ getCPU----&gt;CPU <span aria-hidden="true" class="line-numbers-rows"><span></spa
                         <span class="chip bg-color">多态</span>
                     </a>
                     
-                    <a href="/tags/%E7%BB%A7%E6%89%BF/">
-                        <span class="chip bg-color">继承</span>
-                    </a>
-                    
                     <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
                         <span class="chip bg-color">修饰符</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%A7%E6%89%BF/">
+                        <span class="chip bg-color">继承</span>
                     </a>
                     
                 </div>
@@ -1208,7 +1208,7 @@ getCPU----&gt;CPU <span aria-hidden="true" class="line-numbers-rows"><span></spa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

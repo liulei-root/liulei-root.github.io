@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -531,31 +531,31 @@
 <p>下面将通过对方法的定义和使用的介绍，逐步对这些问题作出解答：</p>
 <h3 id="1、方法的概念"><a href="#1、方法的概念" class="headerlink" title="1、方法的概念"></a>1、方法的概念</h3><p>Java语言中的<strong>“方法”（Method）</strong>在其他语言当中也可能被称为<strong>“函数”（Function）</strong>。</p>
 <p>对于一些复杂的代码逻辑，如果希望重复使用这些代码，并且做到“随时任意使用”，那么就可以将这些代码放在一个大括号“{}”当中，并且起一个名字。使用代码的时候，直接找到名字调用即可。例如：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//外部的类</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
-    <span class="token comment">/**
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//外部的类
+public class Test{
+    /**
     *被调用的方法Add
     *@param x
     *@param y
     *@return
-    */</span>
-    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token class-name">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> x<span class="token operator">+</span>y<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    */
+    public int Add(int x,int y){
+        return x+y;
+    }
+}
 
-<span class="token comment">//调用</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWord</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> b<span class="token operator">=</span>a<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> result<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token comment">//Add方法调用：第一步，类的实例化</span>
-        <span class="token class-name">Test</span> test<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-        <span class="token comment">//第二步，通过实例化的类进行Add方法调用</span>
-        result<span class="token operator">=</span><span class="token class-name"><span class="token namespace">test<span class="token punctuation">.</span></span>Add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>       
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+//调用
+public class HelloWord {
+    public static void main(String[] args) {
+        int a=5;
+        int b=a+1;
+        int result=0;
+        //Add方法调用：第一步，类的实例化
+        Test test=new Test();   
+        //第二步，通过实例化的类进行Add方法调用
+        result=test.Add(a, b);       
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>下面是一个方法的所有组成部分：</p>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">访问修饰符  返回值类型  方法名（参数列表）{
 	方法体
@@ -575,16 +575,16 @@
 </ul>
 <h3 id="2、Java中的类、方法、函数"><a href="#2、Java中的类、方法、函数" class="headerlink" title="2、Java中的类、方法、函数"></a>2、Java中的类、方法、函数</h3><ul>
 <li><p><strong>类</strong>就是指一个种类，比如人，是一个类，动物也是一个类等等，但是如果特指是某个人，比如张三，那么这就是指定的实体。<br>在Java中，类的定义是 : &lt; class&gt; &lt;类名&gt; ,通常我们在 Java 中提到 class ，就是指类的意思，下面的代码就是一个类的简单定义。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test(){
+    ...
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>在 Java中，<strong>方法</strong>与<strong>函数</strong>其实是一样的，只是在C语言中我们习惯叫函数，而在Java中我们习惯叫方法，不管怎么叫，都是指同一个意思。**<em>方法（或函数，为了方便，下面我都说方法 ） 必须在类中**</em>。</p>
 <p>方法的定义 ：&lt;修饰符&gt;&lt;返回值&gt;&lt;方法名&gt; (&lt;参数类型&gt; &lt;参数名&gt;){…..}，代码如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">Method</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test(){
+    public void Method(int x){
+        ...
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通常你看到一个带（）的代码，基本就是指代一个方法；例如: a.XXX()，是指调用实体 a的XXX()方法。</p>
 </li>
 <li><p><strong><em>类可以拥有属性和方法，方法需要定义在类中</em></strong>。在类或方法中创建某个类的实体，可以调用类的方法。</p>
@@ -1182,7 +1182,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

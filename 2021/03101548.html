@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -447,12 +447,12 @@
                                 <span class="chip bg-color">多态</span>
                             </a>
                         
-                            <a href="/tags/%E7%BB%A7%E6%89%BF/">
-                                <span class="chip bg-color">继承</span>
-                            </a>
-                        
                             <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
                                 <span class="chip bg-color">修饰符</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BB%A7%E6%89%BF/">
+                                <span class="chip bg-color">继承</span>
                             </a>
                         
                     </div>
@@ -532,21 +532,21 @@
 <li>非访问修饰符</li>
 </ul>
 <p>修饰符的作用主要是定义类、方法或者变量，通常会放在代码的最前端。例如下面的代码：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//定义类</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span><span class="token comment">//public</span>
-    <span class="token comment">//定义变量</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span><span class="token comment">//private</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> BOX<span class="token operator">=</span><span class="token number">40</span><span class="token punctuation">;</span><span class="token comment">//public static final</span>
-    <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> weeks<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span><span class="token comment">//default static final</span>
-    <span class="token keyword">protected</span> <span class="token keyword">double</span> b <span class="token operator">=</span> <span class="token number">2.0</span><span class="token punctuation">;</span><span class="token comment">//protected</span>
-    <span class="token comment">//定义方法</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">Method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//public</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//public static</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//定义类
+public class Test{//public
+    //定义变量
+    private int a;//private
+    public static final int BOX=40;//public static final
+    static final int weeks=7;//default static final
+    protected double b = 2.0;//protected
+    //定义方法
+    public void Method(){//public
+        ...
+    }
+    public static void main(String[] args){//public static
+        ...
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过上面的Test类我们可以看到，使用修饰符可以让成员变量得到不同程度的访问控制。由此可得我们可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限，分别是：</p>
 <ul>
 <li><p><strong>public</strong> : 意为公开的，访问权限最高，可以跨包访问。</p>
@@ -667,12 +667,12 @@
                                     <span class="chip bg-color">多态</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BB%A7%E6%89%BF/">
-                                    <span class="chip bg-color">继承</span>
-                                </a>
-                            
                                 <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
                                     <span class="chip bg-color">修饰符</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BB%A7%E6%89%BF/">
+                                    <span class="chip bg-color">继承</span>
                                 </a>
                             
                         </div>
@@ -886,12 +886,12 @@
                         <span class="chip bg-color">Java基础语法</span>
                     </a>
                     
-                    <a href="/tags/%E5%8F%98%E9%87%8F/">
-                        <span class="chip bg-color">变量</span>
-                    </a>
-                    
                     <a href="/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/">
                         <span class="chip bg-color">修饰符</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8F%98%E9%87%8F/">
+                        <span class="chip bg-color">变量</span>
                     </a>
                     
                     <a href="/tags/%E7%B1%BB/">
@@ -1196,7 +1196,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

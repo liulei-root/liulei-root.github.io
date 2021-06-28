@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -515,12 +515,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Java基础语法-局部变量、成员变量、类变量三者的定义"><a href="#Java基础语法-局部变量、成员变量、类变量三者的定义" class="headerlink" title="Java基础语法  局部变量、成员变量、类变量三者的定义"></a>Java基础语法  局部变量、成员变量、类变量三者的定义</h2><p>在Java语言中，所有的变量在使用前必须声明。以下列出了一些变量的声明实例。注意有些包含了初始化过程。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">;</span>     <span class="token comment">// 声明三个int型整数：a、 b、c </span>
-<span class="token keyword">int</span> d <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> e <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> f <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 声明三个整数并赋予初值 </span>
-<span class="token keyword">byte</span> z <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>     <span class="token comment">// 声明并初始化 z </span>
-<span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"runoob"</span><span class="token punctuation">;</span>  <span class="token comment">// 声明并初始化字符串 s </span>
-<span class="token keyword">double</span> pi <span class="token operator">=</span> <span class="token number">3.14159</span><span class="token punctuation">;</span> <span class="token comment">// 声明了双精度浮点型变量 pi </span>
-<span class="token keyword">char</span> x <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">;</span>    <span class="token comment">// 声明变量 x 的值是字符 'x'。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">int a, b, c;     // 声明三个int型整数：a、 b、c 
+int d = 3, e = 4, f = 5; // 声明三个整数并赋予初值 
+byte z = 22;     // 声明并初始化 z 
+String s = "runoob";  // 声明并初始化字符串 s 
+double pi = 3.14159; // 声明了双精度浮点型变量 pi 
+char x = 'x';    // 声明变量 x 的值是字符 'x'。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Java语言支持的变量类型有：</p>
 <ul>
 <li><strong>类变量（静态变量）</strong>：类变量也声明在类中，方法体之外，但必须声明为 static 类型。</li>
@@ -528,13 +528,13 @@
 <li><strong>局部变量</strong>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</li>
 </ul>
 <p><strong><em>实例如下：</em></strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Variable</span><span class="token punctuation">{</span>
-    <span class="token keyword">static</span> <span class="token keyword">int</span> allClicks<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment">// 类变量     </span>
-    <span class="token class-name">String</span> str<span class="token operator">=</span><span class="token string">"hello world"</span><span class="token punctuation">;</span>  <span class="token comment">// 变量     </span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>         
-        <span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 局部变量     </span>
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Variable{
+    static int allClicks=0;    // 类变量     
+    String str="hello world";  // 变量     
+    public void method(){         
+        int i =0;  // 局部变量     
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1、局部变量"><a href="#1、局部变量" class="headerlink" title="1、局部变量"></a>1、局部变量</h3><ul>
 <li><p>局部变量声明在方法、构造方法或者语句块中；</p>
 </li>
@@ -554,37 +554,37 @@
 </ul>
 <p><strong><em>实例 1 如下：</em></strong></p>
 <p>在以下实例中age是一个局部变量。定义在pupAge()方法中，它的作用域就限制在这个方法中。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>    
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">pupAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>      
-        age <span class="token operator">=</span> age <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">;</span>      
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小狗的年龄是: "</span> <span class="token operator">+</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span>      
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token class-name">Test</span> test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
-        test<span class="token punctuation">.</span><span class="token function">pupAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"> public class Test{    
+    public void pupAge(){      
+        int age = 0;      
+        age = age + 7;      
+        System.out.println("小狗的年龄是: " + age);   
+    }      
+    public static void main(String[] args){      
+        Test test = new Test();      
+        test.pupAge();   
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上实例编译运行结果如下:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">小狗的年龄是<span class="token operator">:</span> <span class="token number">7</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">小狗的年龄是: 7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong><em>实例 2 如下：</em></strong></p>
 <p>在下面的例子中 age 变量没有初始化，所以在编译时会出错：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>    
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">pupAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token keyword">int</span> age<span class="token punctuation">;</span>      
-        age <span class="token operator">=</span> age <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">;</span>      
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小狗的年龄是 : "</span> <span class="token operator">+</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span>      
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token class-name">Test</span> test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
-        test<span class="token punctuation">.</span><span class="token function">pupAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test{    
+    public void pupAge(){      
+        int age;      
+        age = age + 7;      
+        System.out.println("小狗的年龄是 : " + age);   
+    }      
+    public static void main(String[] args){      
+        Test test = new Test();      
+        test.pupAge();   
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上实例编译运行结果如下:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Test</span><span class="token punctuation">.</span>java<span class="token operator">:</span><span class="token number">4</span><span class="token operator">:</span>variable number might not have been initialized
-age <span class="token operator">=</span> age <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">;</span>
-         <span class="token operator">^</span>
-<span class="token number">1</span> error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">Test.java:4:variable number might not have been initialized
+age = age + 7;
+         ^
+1 error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2、实例变量（成员变量）"><a href="#2、实例变量（成员变量）" class="headerlink" title="2、实例变量（成员变量）"></a>2、实例变量（成员变量）</h3><ul>
 <li><p>变量声明在一个类中，但在方法、构造方法和语句块之外；</p>
 </li>
@@ -603,48 +603,48 @@ age <span class="token operator">=</span> age <span class="token operator">+</sp
 </li>
 <li><p>实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。</p>
 <p>变量的值可以在声明时指定，也可以在构造方法中指定；</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
-    <span class="token comment">//方式一：声明变量时指定值</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> b<span class="token punctuation">;</span>
-    <span class="token comment">//方式二：构造器中指定值</span>
-    <span class="token keyword">public</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test{
+    //方式一：声明变量时指定值
+    private int a=5;
+    private int b;
+    //方式二：构造器中指定值
+    public Test(){
+        this.b = 10;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>实例变量可以直接通过变量名访问。但在静态方法以及其他类中，就应该使用完全限定名：ObejectReference.VariableName。</p>
 </li>
 </ul>
 <p><strong><em>实例如下：</em></strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span><span class="token punctuation">{</span>   
-    <span class="token comment">// 这个实例变量对子类可见   </span>
-    <span class="token keyword">public</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>   
-    <span class="token comment">// 私有变量，仅在该类可见   </span>
-    <span class="token keyword">private</span> <span class="token keyword">double</span> salary<span class="token punctuation">;</span>   
-    <span class="token comment">//在构造器中对name赋值   </span>
-    <span class="token keyword">public</span> <span class="token class-name">Employee</span> <span class="token punctuation">(</span><span class="token class-name">String</span> empName<span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        name <span class="token operator">=</span> empName<span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span>   
-    <span class="token comment">//设定salary的值   </span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSalary</span><span class="token punctuation">(</span><span class="token keyword">double</span> empSal<span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        salary <span class="token operator">=</span> empSal<span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span>     
-    <span class="token comment">// 打印信息   </span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"名字 : "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span>      
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"薪水 : "</span> <span class="token operator">+</span> salary<span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span>    
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>      
-        <span class="token comment">//创建对象</span>
-        <span class="token class-name">Employee</span> empOne <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"RUNOOB"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
-        <span class="token comment">//调用方法</span>
-        empOne<span class="token punctuation">.</span><span class="token function">setSalary</span><span class="token punctuation">(</span><span class="token number">1000.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
-        empOne<span class="token punctuation">.</span><span class="token function">printEmp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Employee{   
+    // 这个实例变量对子类可见   
+    public String name;   
+    // 私有变量，仅在该类可见   
+    private double salary;   
+    //在构造器中对name赋值   
+    public Employee (String empName){      
+        name = empName;   
+    }   
+    //设定salary的值   
+    public void setSalary(double empSal){      
+        salary = empSal;   
+    }     
+    // 打印信息   
+    public void printEmp(){      
+        System.out.println("名字 : " + name );      
+        System.out.println("薪水 : " + salary);   
+    }    
+    public static void main(String[] args){      
+        //创建对象
+        Employee empOne = new Employee("RUNOOB");      
+        //调用方法
+        empOne.setSalary(1000.0);      
+        empOne.printEmp();   
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上实例编译运行结果如下:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">名字 <span class="token operator">:</span> RUNOOB
-薪水 <span class="token operator">:</span> <span class="token number">1000.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">名字 : RUNOOB
+薪水 : 1000.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="3、类变量（静态变量）"><a href="#3、类变量（静态变量）" class="headerlink" title="3、类变量（静态变量）"></a>3、类变量（静态变量）</h3><ul>
 <li>类变量也称为静态变量，在类中以 static 关键字声明，但必须在方法之外。</li>
 <li>无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</li>
@@ -657,16 +657,16 @@ age <span class="token operator">=</span> age <span class="token operator">+</sp
 <li>类变量被声明为 public static final 类型时，类变量名称一般建议使用大写字母。如果静态变量不是 public 和 final 类型，其命名方式与实例变量以及局部变量的命名方式一致。</li>
 </ul>
 <p><strong><em>实例如下：</em></strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>    
-    <span class="token comment">//salary是静态的私有变量    </span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">double</span> salary<span class="token punctuation">;</span>    
-    <span class="token comment">// DEPARTMENT是一个常量    </span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> DEPARTMENT <span class="token operator">=</span> <span class="token string">"开发人员"</span><span class="token punctuation">;</span>    
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>    
-        salary <span class="token operator">=</span> <span class="token number">10000</span><span class="token punctuation">;</span>        
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>DEPARTMENT<span class="token operator">+</span><span class="token string">"平均工资:"</span><span class="token operator">+</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span>    
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Employee {    
+    //salary是静态的私有变量    
+    private static double salary;    
+    // DEPARTMENT是一个常量    
+    public static final String DEPARTMENT = "开发人员";    
+    public static void main(String[] args){    
+        salary = 10000;        
+        System.out.println(DEPARTMENT+"平均工资:"+salary);    
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上实例编译运行结果如下:</p>
 <pre class="line-numbers language-none"><code class="language-none">开发人员平均工资:10000.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>注意：如果其他类想要访问该变量，可以这样访问：Employee.DEPARTMENT</strong>。</p>
@@ -1255,7 +1255,7 @@ age <span class="token operator">=</span> age <span class="token operator">+</sp
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

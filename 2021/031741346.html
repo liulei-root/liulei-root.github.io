@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -528,48 +528,48 @@
 <p><strong>图示：</strong></p>
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/JavaDesignPatternsLSP.png"></p>
 <p><strong>代码如下：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//鸟类</span>
-<span class="token keyword">class</span> <span class="token class-name">Bird</span> <span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">double</span> flySpeed<span class="token punctuation">;</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//鸟类
+class Bird {
+    private double flySpeed;
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setFlySpeed</span><span class="token punctuation">(</span><span class="token keyword">double</span> speed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        flySpeed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    public void setFlySpeed(double speed) {
+        flySpeed = speed;
+    }
 
-    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getFlyTime</span><span class="token punctuation">(</span><span class="token keyword">double</span> distance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> distance <span class="token operator">/</span> flySpeed<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    public double getFlyTime(double distance) {
+        return distance / flySpeed;
+    }
+}
 
-<span class="token comment">//燕子类</span>
-<span class="token keyword">class</span> <span class="token class-name">Swallow</span> <span class="token keyword">extends</span> <span class="token class-name">Bird</span> <span class="token punctuation">{</span>
+//燕子类
+class Swallow extends Bird {
    
-<span class="token punctuation">}</span>
+}
 
-<span class="token comment">//鸵鸟类</span>
-<span class="token keyword">class</span> <span class="token class-name">Ostrich</span> <span class="token keyword">extends</span> <span class="token class-name">Bird</span><span class="token punctuation">{</span>
-    <span class="token comment">//由于鸵鸟不能飞行，因此我们需要重写setSpeed方法，将飞行速度设置为0。</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSpeed</span><span class="token punctuation">(</span><span class="token keyword">double</span> speed<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-           flySpeed<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+//鸵鸟类
+class Ostrich extends Bird{
+    //由于鸵鸟不能飞行，因此我们需要重写setSpeed方法，将飞行速度设置为0。
+    public void setSpeed(double speed)
+    {
+           flySpeed=0;
+    }
+}
 
-<span class="token comment">//测试类</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Bird</span> swallow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Swallow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Bird</span> ostrich <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Ostrich</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+//测试类
+public class Test {
+    public static void main(String[] args) {
+        Bird swallow = new Swallow();
+        Bird ostrich = new Ostrich();
 
-        swallow<span class="token punctuation">.</span><span class="token function">setFlySpeed</span><span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ostrich<span class="token punctuation">.</span><span class="token function">setFlySpeed</span><span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        swallow.setFlySpeed(120);
+        ostrich.setFlySpeed(120);
 
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>swallow<span class="token punctuation">.</span><span class="token function">getFlyTime</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>ostrich<span class="token punctuation">.</span><span class="token function">getFlyTime</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        System.out.println(swallow.getFlyTime(300));
+        System.out.println(ostrich.getFlyTime(300));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>运行结果：</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">2.5</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">2.5
 编译报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>程序运行不符合预期的原因是违背了里氏替换原则，正确的做法应该是取消几维鸟原来的继承关系，定义鸟和几维鸟更一般的父类，如动物类。</p>
 <h5 id="5-2-修改为正确方式"><a href="#5-2-修改为正确方式" class="headerlink" title="5.2 修改为正确方式"></a>5.2 修改为正确方式</h5><p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/JavaDesignPatternsLSP2.png"></p>
@@ -1150,7 +1150,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

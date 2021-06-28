@@ -6,7 +6,7 @@
   <link href="https://liulei-root.github.io/atom.xml" rel="self"/>
   
   <link href="https://liulei-root.github.io/"/>
-  <updated>2021-06-02T08:35:05.082Z</updated>
+  <updated>2021-06-28T07:46:20.675Z</updated>
   <id>https://liulei-root.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://liulei-root.github.io/2021/062816107.html"/>
+    <id>https://liulei-root.github.io/2021/062816107.html</id>
+    <published>2021-06-28T07:46:20.675Z</published>
+    <updated>2021-06-28T07:46:20.675Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git 报错 Updates were rejected because the remote contains work that you do</title>
+    <link href="https://liulei-root.github.io/2021/060421155.html"/>
+    <id>https://liulei-root.github.io/2021/060421155.html</id>
+    <published>2021-06-04T02:50:00.000Z</published>
+    <updated>2021-06-04T03:17:15.261Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Git-报错-Updates-were-rejected-because-the-remote-contains-work-that-you-do&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Git - gitee - git - idea" scheme="https://liulei-root.github.io/categories/Git-gitee-git-idea/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Git分布式版本控制工具</title>
@@ -558,75 +602,13 @@
     
     <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
     
-    <category term="变量" scheme="https://liulei-root.github.io/tags/%E5%8F%98%E9%87%8F/"/>
-    
     <category term="修饰符" scheme="https://liulei-root.github.io/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    
+    <category term="变量" scheme="https://liulei-root.github.io/tags/%E5%8F%98%E9%87%8F/"/>
     
     <category term="类" scheme="https://liulei-root.github.io/tags/%E7%B1%BB/"/>
     
     <category term="方法" scheme="https://liulei-root.github.io/tags/%E6%96%B9%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法  四种访问权限修饰符详细通俗的解释</title>
-    <link href="https://liulei-root.github.io/2021/03101548.html"/>
-    <id>https://liulei-root.github.io/2021/03101548.html</id>
-    <published>2021-03-10T09:57:00.000Z</published>
-    <updated>2021-03-11T04:35:28.512Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Java基础语法-四种访问权限修饰符详细通俗的解释&quot;&gt;&lt;a href=&quot;#Java基础语法-四种访问权限修饰符详细通俗的解释&quot; class=&quot;headerlink&quot; title=&quot;Java基础语法  四种访问权限修饰符详细通俗的解释&quot;&gt;&lt;/a&gt;Java基础语法 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    
-    <category term="封装" scheme="https://liulei-root.github.io/tags/%E5%B0%81%E8%A3%85/"/>
-    
-    <category term="多态" scheme="https://liulei-root.github.io/tags/%E5%A4%9A%E6%80%81/"/>
-    
-    <category term="继承" scheme="https://liulei-root.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
-    
-    <category term="修饰符" scheme="https://liulei-root.github.io/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法  属性与字段的区别</title>
-    <link href="https://liulei-root.github.io/2021/03106686.html"/>
-    <id>https://liulei-root.github.io/2021/03106686.html</id>
-    <published>2021-03-10T02:15:00.000Z</published>
-    <updated>2021-03-10T07:29:32.846Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Java基础语法-属性与字段的区别&quot;&gt;&lt;a href=&quot;#Java基础语法-属性与字段的区别&quot; class=&quot;headerlink&quot; title=&quot;Java基础语法  属性与字段的区别&quot;&gt;&lt;/a&gt;Java基础语法 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    
-    <category term="属性" scheme="https://liulei-root.github.io/tags/%E5%B1%9E%E6%80%A7/"/>
-    
-    <category term="字段" scheme="https://liulei-root.github.io/tags/%E5%AD%97%E6%AE%B5/"/>
     
   </entry>
   

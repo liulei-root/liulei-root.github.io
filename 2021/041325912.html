@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -562,22 +562,22 @@
 <p>②手动启动的方式（DOS命令方式启动）</p>
 <p>==注意：这里打开DOS需要以管理员的身份==，搜索栏搜索“命令提示符”，然后右键管理员身份运行。</p>
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210413184624449.png" alt="image-20210413184624449"></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//打开后执行以下命令开启MySQL服务</span>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//打开后执行以下命令开启MySQL服务
 net start mysql
-<span class="token comment">//执行以下命令停止MySQL服务</span>
+//执行以下命令停止MySQL服务
 net stop mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>控制台连接数据库</p>
 <p>MySQL 是一个需要账户名密码登录的数据库，登陆后使用，它提供了一个默认的 root 账号，使用安装时设置的密码即可登录。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//登录命令,方式一：</span>
-mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>proot
-<span class="token comment">//方式二</span>
-mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//登录命令,方式一：
+mysql -uroot -proot
+//方式二
+mysql -uroot -p
     然后提示输入密码：
-<span class="token comment">//方式三</span>
-mysql <span class="token operator">-</span>hip地址 <span class="token operator">-</span>uroot <span class="token operator">-</span>proot
-<span class="token comment">//方式四</span>
-mysql <span class="token operator">--</span>host<span class="token operator">=</span>ip地址 <span class="token operator">--</span>user<span class="token operator">=</span>root <span class="token operator">--</span>password<span class="token operator">=</span>root
-<span class="token comment">//退出MySQL</span>
+//方式三
+mysql -hip地址 -uroot -proot
+//方式四
+mysql --host=ip地址 --user=root --password=root
+//退出MySQL
 quit或exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>SQLyog 图形化工具——客户端控制数据库</p>
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210413190841860.png" alt="image-20210413190841860"></p>
@@ -1188,7 +1188,7 @@ quit或exit<span aria-hidden="true" class="line-numbers-rows"><span></span><span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             

@@ -30,9 +30,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
 </head>
 
 
@@ -620,18 +620,18 @@
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210602151540181.png" alt="image-20210602151540181"></p>
 <p>将文件添加至忽略列表：</p>
 <p>一般我们总会有些文件无需纳入Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以在工作目录中创建一个名为 .gitignore 的文件（文件名称固定），列出要忽略的文件模式。下面是一个示例：</p>
-<pre class="line-numbers language-apl" data-language="apl"><code class="language-apl"><span class="token comment"># no .a files</span>
-<span class="token function">*</span><span class="token dyadic-operator operator">.</span>a
-<span class="token comment"># but do track lib.a, even though you're ignoring .a files above</span>
-<span class="token function">!</span>lib<span class="token dyadic-operator operator">.</span>a
-<span class="token comment"># only ignore the TODO file in the current directory, not subdir/TODO</span>
-<span class="token monadic-operator operator">/</span>TODO
-<span class="token comment"># ignore all files in the build/ directory</span>
-build<span class="token monadic-operator operator">/</span>
-<span class="token comment"># ignore doc/notes.txt, but not doc/server/arch.txt</span>
-doc<span class="token monadic-operator operator">/</span><span class="token function">*</span><span class="token dyadic-operator operator">.</span>txt
-<span class="token comment"># ignore all .pdf files in the doc/ directory</span>
-doc<span class="token monadic-operator operator">/</span><span class="token function">*</span><span class="token function">*</span><span class="token monadic-operator operator">/</span><span class="token function">*</span><span class="token dyadic-operator operator">.</span>pdf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-apl" data-language="apl"><code class="language-apl"># no .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+# ignore all .pdf files in the doc/ directory
+doc/**/*.pdf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>git log 查看日志记录</p>
 <p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210602151629429.png" alt="image-20210602151629429"></p>
 <h3 id="3-6-远程仓库操作"><a href="#3-6-远程仓库操作" class="headerlink" title="3.6 远程仓库操作"></a>3.6 远程仓库操作</h3><p>前面执行的命令操作都是针对的本地仓库，下面我们会学习关于远程仓库的一些操作，具体包括：</p>
@@ -933,58 +933,40 @@ doc<span class="token monadic-operator operator">/</span><span class="token func
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/060263789.html">
+                <a href="/2021/060421155.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Git分布式版本控制工具">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Git 报错 Updates were rejected because the remote contains work that you do">
                         
-                        <span class="card-title">Git分布式版本控制工具</span>
+                        <span class="card-title">Git 报错 Updates were rejected because the remote contains work that you do</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS）。
+                            idea本地上传文件到远程(gitee/github)上会出现内容不一致报错的情况，以下提供完美的解决方案。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/Git-gitee-git-idea/" class="post-category">
+                                    Git - gitee - git - idea
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                    <a href="/tags/gitee/">
-                        <span class="chip bg-color">gitee</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1295,7 +1277,7 @@ doc<span class="token monadic-operator operator">/</span><span class="token func
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">160.9k</span>&nbsp;字
+                class="white-color">161.6k</span>&nbsp;字
             
             
             
