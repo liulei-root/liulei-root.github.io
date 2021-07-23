@@ -647,13 +647,13 @@
             
             <tag> Java基础语法 </tag>
             
-            <tag> 类 </tag>
+            <tag> 变量 </tag>
             
             <tag> 修饰符 </tag>
             
-            <tag> 方法 </tag>
+            <tag> 类 </tag>
             
-            <tag> 变量 </tag>
+            <tag> 方法 </tag>
             
         </tags>
       
@@ -680,11 +680,11 @@
             
             <tag> Java基础语法 </tag>
             
-            <tag> 封装 </tag>
-            
             <tag> 多态 </tag>
             
             <tag> 继承 </tag>
+            
+            <tag> 封装 </tag>
             
             <tag> 修饰符 </tag>
             
