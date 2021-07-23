@@ -6,7 +6,7 @@
   <link href="https://liulei-root.github.io/atom.xml" rel="self"/>
   
   <link href="https://liulei-root.github.io/"/>
-  <updated>2021-07-07T08:06:37.841Z</updated>
+  <updated>2021-07-23T09:51:06.082Z</updated>
   <id>https://liulei-root.github.io/</id>
   
   <author>
@@ -17,11 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>算法思维——简单的方式打开动态规划</title>
+    <link href="https://liulei-root.github.io/2021/072326875.html"/>
+    <id>https://liulei-root.github.io/2021/072326875.html</id>
+    <published>2021-07-23T03:51:00.000Z</published>
+    <updated>2021-07-23T09:51:06.082Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h2 id=&quot;算法思维——简单的方式打开动态规划&quot;&gt;&lt;a href=&quot;#算法思维——简单的方式打开动态规划&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
+    
+    
+    <category term="动态规划" scheme="https://liulei-root.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="算法" scheme="https://liulei-root.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="数据结构" scheme="https://liulei-root.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Math.random()获得短信验证码功能需要的随机数</title>
+    <link href="https://liulei-root.github.io/2021/071610614.html"/>
+    <id>https://liulei-root.github.io/2021/071610614.html</id>
+    <published>2021-07-16T02:25:00.000Z</published>
+    <updated>2021-07-16T02:26:03.125Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;使用Math-random-获得短信验证码功能需要的随机数&quot;&gt;&lt;a href=&quot;#使用Math-random-获得短信验证码功能需要的随机数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
+    
+    
+    <category term="函数" scheme="https://liulei-root.github.io/tags/%E5%87%BD%E6%95%B0/"/>
+    
+    <category term="random" scheme="https://liulei-root.github.io/tags/random/"/>
+    
+    <category term="Math" scheme="https://liulei-root.github.io/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java高级 如何理解Spring IoC中的控制反转、依赖倒置原则、依赖注入、控制反转容器？</title>
     <link href="https://liulei-root.github.io/2021/070754183.html"/>
     <id>https://liulei-root.github.io/2021/070754183.html</id>
     <published>2021-07-07T08:05:00.000Z</published>
-    <updated>2021-07-07T08:06:37.841Z</updated>
+    <updated>2021-07-08T08:24:08.734Z</updated>
     
     
       
@@ -50,7 +109,7 @@
     <link href="https://liulei-root.github.io/2021/060421155.html"/>
     <id>https://liulei-root.github.io/2021/060421155.html</id>
     <published>2021-06-04T02:50:00.000Z</published>
-    <updated>2021-06-28T09:09:33.413Z</updated>
+    <updated>2021-07-08T08:29:06.399Z</updated>
     
     
       
@@ -63,8 +122,14 @@
     
     
     
-    <category term="Git - gitee - git - idea" scheme="https://liulei-root.github.io/categories/Git-gitee-git-idea/"/>
+    <category term="Git" scheme="https://liulei-root.github.io/categories/Git/"/>
     
+    
+    <category term="gitee" scheme="https://liulei-root.github.io/tags/gitee/"/>
+    
+    <category term="idea" scheme="https://liulei-root.github.io/tags/idea/"/>
+    
+    <category term="git" scheme="https://liulei-root.github.io/tags/git/"/>
     
   </entry>
   
@@ -90,11 +155,11 @@
     <category term="Git" scheme="https://liulei-root.github.io/categories/Git/"/>
     
     
-    <category term="github" scheme="https://liulei-root.github.io/tags/github/"/>
+    <category term="gitee" scheme="https://liulei-root.github.io/tags/gitee/"/>
     
     <category term="git" scheme="https://liulei-root.github.io/tags/git/"/>
     
-    <category term="gitee" scheme="https://liulei-root.github.io/tags/gitee/"/>
+    <category term="github" scheme="https://liulei-root.github.io/tags/github/"/>
     
   </entry>
   
@@ -352,13 +417,13 @@
     <category term="github" scheme="https://liulei-root.github.io/categories/github/"/>
     
     
-    <category term="github" scheme="https://liulei-root.github.io/tags/github/"/>
-    
-    <category term="Typora" scheme="https://liulei-root.github.io/tags/Typora/"/>
+    <category term="git" scheme="https://liulei-root.github.io/tags/git/"/>
     
     <category term="Hexo" scheme="https://liulei-root.github.io/tags/Hexo/"/>
     
-    <category term="git" scheme="https://liulei-root.github.io/tags/git/"/>
+    <category term="github" scheme="https://liulei-root.github.io/tags/github/"/>
+    
+    <category term="Typora" scheme="https://liulei-root.github.io/tags/Typora/"/>
     
   </entry>
   
@@ -557,66 +622,6 @@
     <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
     
     <category term="封装" scheme="https://liulei-root.github.io/tags/%E5%B0%81%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora字体颜色设置的3种方案</title>
-    <link href="https://liulei-root.github.io/2021/03115379.html"/>
-    <id>https://liulei-root.github.io/2021/03115379.html</id>
-    <published>2021-03-11T08:03:00.000Z</published>
-    <updated>2021-03-11T12:09:06.349Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Typora字体颜色设置的3种方案&quot;&gt;&lt;a href=&quot;#Typora字体颜色设置的3种方案&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Typora" scheme="https://liulei-root.github.io/categories/Typora/"/>
-    
-    
-    <category term="技术工具" scheme="https://liulei-root.github.io/tags/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="解决方案" scheme="https://liulei-root.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法  非访问修饰符的使用</title>
-    <link href="https://liulei-root.github.io/2021/031156639.html"/>
-    <id>https://liulei-root.github.io/2021/031156639.html</id>
-    <published>2021-03-11T03:30:00.000Z</published>
-    <updated>2021-03-11T04:35:28.527Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Java基础语法-非访问修饰符的使用&quot;&gt;&lt;a href=&quot;#Java基础语法-非访问修饰符的使用&quot; class=&quot;headerlink&quot; title=&quot;Java基础语法  非访问修饰符的使用&quot;&gt;&lt;/a&gt;Java基础语法 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    
-    <category term="变量" scheme="https://liulei-root.github.io/tags/%E5%8F%98%E9%87%8F/"/>
-    
-    <category term="修饰符" scheme="https://liulei-root.github.io/tags/%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    
-    <category term="类" scheme="https://liulei-root.github.io/tags/%E7%B1%BB/"/>
-    
-    <category term="方法" scheme="https://liulei-root.github.io/tags/%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   

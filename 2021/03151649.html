@@ -1031,7 +1031,7 @@ Store1 的Fun2...<span aria-hidden="true" class="line-numbers-rows"><span></span
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4, h5'
+            headingSelector: 'h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -1043,7 +1043,7 @@ Store1 的Fun2...<span aria-hidden="true" class="line-numbers-rows"><span></span
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1175,7 +1175,7 @@ Store1 的Fun2...<span aria-hidden="true" class="line-numbers-rows"><span></span
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">163.8k</span>&nbsp;字
+                class="white-color">167.6k</span>&nbsp;字
             
             
             

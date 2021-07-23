@@ -5212,7 +5212,7 @@ p[y] ← x // 将 “y 的父节点” 设为 “x”<span aria-hidden="true" cl
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4, h5'
+            headingSelector: 'h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -5224,7 +5224,7 @@ p[y] ← x // 将 “y 的父节点” 设为 “x”<span aria-hidden="true" cl
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -5356,7 +5356,7 @@ p[y] ← x // 将 “y 的父节点” 设为 “x”<span aria-hidden="true" cl
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">163.8k</span>&nbsp;字
+                class="white-color">167.6k</span>&nbsp;字
             
             
             
