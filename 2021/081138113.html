@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git">
+    <meta name="keywords" content="动态规划">
     <meta name="description" content="רע�ڼ���,��������,����֪ʶ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git 报错 Updates were rejected because the remote contains work that you do | New Life</title>
+    <title>动态规划经典例题“0-1背包”细节分析 | New Life</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git 报错 Updates were rejected because the remote contains work that you do</h1>
+                    <h1 class="description center-align post-title">动态规划经典例题“0-1背包”细节分析</h1>
                 </div>
             </div>
         </div>
@@ -435,16 +435,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/gitee/">
-                                <span class="chip bg-color">gitee</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
                             </a>
                         
-                            <a href="/tags/idea/">
-                                <span class="chip bg-color">idea</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
                     </div>
@@ -455,8 +455,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -474,28 +474,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-08-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    644
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -518,32 +518,160 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Git-报错-Updates-were-rejected-because-the-remote-contains-work-that-you-do"><a href="#Git-报错-Updates-were-rejected-because-the-remote-contains-work-that-you-do" class="headerlink" title="Git 报错 Updates were rejected because the remote contains work that you do"></a>Git 报错 Updates were rejected because the remote contains work that you do</h2><p>这个报错实在是让我受不了了，每次不管是‘命令行’ 还是 idea 提交都会出现这样让人心态爆炸的问题。然而每次出现又重复的查找解决办法，这次实在受不了了，便有了这篇文章，希望它也能帮助到心态爆炸的你。</p>
-<h3 id="1、命令行出现这种情况"><a href="#1、命令行出现这种情况" class="headerlink" title="1、命令行出现这种情况"></a>1、命令行出现这种情况</h3><p>命令行执行会出现这样的问题是因为错误的提交过程：</p>
-<pre class="line-numbers language-apl" data-language="apl"><code class="language-apl">git init //初始化仓库
-git add .(文件name)                  //添加文件到本地暂存
-git commit -m “first commit”        //添加文件描述信息
-git remote add origin    远程仓库地址 //链接远程仓库
-git push -u origin master          //把本地仓库的文件推送到远程仓master                                      分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这样就出现了标题提示的错误信息，如下图：</p>
-<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210604105941769.png" alt="image-20210604105941769"></p>
-<p>经过多次出现同样的问题，我已经对这个问题的原因了如指掌了，这是因为在本地新建库后，与远程仓库的内容不一致导致的（远程仓库有一些内容本地没有）。问题了如指掌，但是解决方法每次都记错，所以还是记录一下吧。</p>
-<p>正确的提交过程如下：</p>
-<pre class="line-numbers language-apl" data-language="apl"><code class="language-apl">git init                           //初始化仓库
-git add .(文件name)                //添加文件到本地 
-git commit -m “first commit”      //添加文件描述信息
-git remote add origin  远程仓库地址 //链接远程仓库 
-git pull origin master           // 把本地仓库的变化连接到远程仓库master                                     分支
-git push -u origin master        //把本地仓库的文件推送到远程仓库master                                    分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在执行上面第五步的时候可能会出现新的错误，也是常见的错误了，错误信息如下：</p>
-<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210604110514047.png" alt="image-20210604110514047"></p>
-<p>不要慌，这是因为文件版本没有及时更新，两个分支是两个不同的版本，具有不同的提交历史，决绝方式就是在原本的命令之后加上一句命令即可：</p>
-<pre class="line-numbers language-apl" data-language="apl"><code class="language-apl">git pull origin master --allow-unrelated-histories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后有的情况下，输入上面的命令就能解决问题，有的情况下，他又会报新的错误，如下：</p>
-<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210604110855717.png" alt="image-20210604110855717"></p>
-<p>网上查了解决办法是真的麻烦，但是原因知道了，就是有文件冲突，没有更新，那就好办了，重新输入以下命令问题解决：</p>
-<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210604111243288.png" alt="image-20210604111243288"></p>
-<h3 id="2、idea出现同样的报错，解决方式同上"><a href="#2、idea出现同样的报错，解决方式同上" class="headerlink" title="2、idea出现同样的报错，解决方式同上"></a>2、idea出现同样的报错，解决方式同上</h3><p>输入命令的地方在 idea 的下方，有一个 terminal ，点击之后，即可输入上面的命令。</p>
+                <p>[toc]</p>
+<h2 id="动态规划经典例题“0-1背包”细节分析"><a href="#动态规划经典例题“0-1背包”细节分析" class="headerlink" title="动态规划经典例题“0-1背包”细节分析"></a>动态规划经典例题“0-1背包”细节分析</h2><h3 id="1、动态规划原理回顾"><a href="#1、动态规划原理回顾" class="headerlink" title="1、动态规划原理回顾"></a>1、动态规划原理回顾</h3><ol>
+<li><p>java实现动态规划的两种方式<br>方法一：递归<br>方法二：循环</p>
+</li>
+<li><p>原理<br>动态规划简单说就是当前结果仅依赖于几个子问题的结果</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">比如汉诺塔问题，把n个盘从A移动到C，仅依赖于：
+①把n-1个盘A --&gt;B (a步)
+②把最后一个盘从A --&gt;C (1步)
+③把n-1个盘B–&gt;C (b步)
+先得到 res=a+b+1
+
+而其中的a，b 又可以类似res一样分别分解成子问题，(b同理)
+a=a(n-1)+b(n-1)+1
+a(n-1)=a(n-2)+b(n-2)+1
+…
+a(2)=a(1)+b(1)+1
+此时a(1)=b(1)=1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、问题原型"><a href="#2、问题原型" class="headerlink" title="2、问题原型"></a>2、问题原型</h3></li>
+</ol>
+<p>如果对动态规划不熟悉的小伙伴可以先看看我的前一篇文章：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liulei952413829/article/details/119041491">算法思维——简单的方式打开动态规划</a></p>
+<p><a href="https://liulei-root.github.io/2021/072326875.html">个人博客地址：https://liulei-root.github.io/2021/072326875.html</a></p>
+<p><strong>0-1背包问题</strong>：</p>
+<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/1.jpg" alt="1"></p>
+<ul>
+<li>给定n个重量为w1，w2，w3，…,wn，价值为v1，v2，v3，…,vn的物品和容量为C的背包</li>
+<li>求这个物品中一个最有价值的子集，使得在满足背包的容量的前提下，包内的总价值最大</li>
+<li>注意：0-1背包问题指的是每个物品只能使用一次</li>
+</ul>
+<p><strong>思路解析</strong>：</p>
+<p>在思考解题方式之前，根据我们对动态规划算法的了解，我们首先需要找到这个问题的状态转移方程，这是解决动态规划问题的核心，接下来我们一起来分析这个问题：</p>
+<ul>
+<li>背包问题无非有以下两种情况之一：</li>
+<li>情况一，第i件物品太重放不进去,此时总价值为：f(w(i-1),C)</li>
+<li>情况二，放入第i件物品，此时总价值为：v(i)+f(w(i-1),C-w(i))</li>
+<li>于是得到状态转移方程，也就是两种选择中总价值最大的方案：放入或不放入 f(w(i),C) = max( f(w(i-1),C) , v(i)+f(w(i−1),C−w(i)) )</li>
+</ul>
+<h3 id="3、递归方法"><a href="#3、递归方法" class="headerlink" title="3、递归方法"></a>3、递归方法</h3><p>首先我们用递归的方式来尝试解决这个问题。</p>
+<p>我们用f ( n , C ) 表示将前n个物品放进容量为C的背包里，得到的最大的价值。</p>
+<p>我们用自顶向下的角度来看，假如我们已经进行到了最后一步（即求解将n个物品放到背包里获得的最大价值）,此时我们便有两种选择：</p>
+<ol>
+<li>不放第n个物品，此时总价值为F ( n − 1 , C )</li>
+<li>放置第n个物品，此时总价值为v(n) + F ( n − 1 , C − w(n) ) )</li>
+</ol>
+<p>使用递归方式实现，有一个严重的问题需要解决，就是直接采用自顶向下的递归算法会导致要不止一次的解决公共子问题，因此效率是相当低下的。</p>
+<p>我们可以将已经求得的子问题的结果保存下来，这样对子问题只会求解一次，这便是记忆化搜索，也就是我下面代码中memo的用法。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.wedu.demo;
+
+public class KnapsackProblem {
+    private static int[][] memo;//中间变量，优化递归（记忆化搜索）
+
+    /**
+     * 自顶向下：递归
+     * @param w         物品重量
+     * @param v         物品价值
+     * @param index     当前待选择的物品索引
+     * @param capacity  当前背包有效容量
+     * @return          最大价值
+     */
+    public static int reKnapsack(int[] w, int[] v, int index, int capacity){
+        //如果索引无效或者容量不足，直接返回当前价值0
+        if (index &lt; 0 || capacity &lt;= 0)
+            return 0;
+
+        //如果此子问题已经求解过，则直接返回上次求解的结果
+        if (memo[index][capacity] != 0) {
+            return memo[index][capacity];
+        }
+
+        //不放第index个物品所得价值
+        int res = reKnapsack(w, v, index - 1, capacity);
+        //放第index个物品所得价值（前提是：第index个物品可以放得下）
+        if (w[index] &lt;= capacity) {
+            res = Math.max(res, v[index] + reKnapsack(w, v, index - 1, capacity - w[index]));
+        }
+        //添加子问题的解，便于下次直接使用
+        memo[index][capacity] = res;
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] w = {2, 1, 3, 2};
+        int[] v = {12, 10, 20, 15};
+        int length = w.length;
+        int C = 5;//包大小
+        memo = new int[length][C + 1];//初始化中间变量
+        System.out.println(reKnapsack(w, v, length-1, 5));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4、循环方法"><a href="#4、循环方法" class="headerlink" title="4、循环方法"></a>4、循环方法</h3><p>循环方法，也是动态规划问题最常用的解题方法，使用这个方法，我们需要先找到三个关键目标：</p>
+<ol>
+<li><p><strong>建立状态转移方程</strong></p>
+<p>上面已经推导过：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">dp[i][j] = Math.max(dp[i][j], v[i] + dp[i - 1][j - w[i]])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>缓存并复用以往结果</strong></p>
+<p>我们使用二维数组来记录子问题的解：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">int[][] dp = new int[length][C + 1];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>按顺序从小往大算</strong></p>
+<p>循环遍历。</p>
+</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.wedu.demo;
+
+public class KnapsackProblem {
+
+    /**
+     * 自底向上：x
+     * @param w     物品重量
+     * @param v     物品价值
+     * @param C     当前背包有效容量
+     * @return      最大价值
+     */
+    public static int dpKnapsack(int[] w, int[] v, int C){
+        int length = w.length;
+        if (length == 0) {
+            return 0;
+        }
+
+        int[][] dp = new int[length][C + 1];
+        //初始化第一行
+        //仅考虑容量为C的背包放第0个物品的情况
+        for (int i = 0; i &lt;= C; i++) {
+            dp[0][i] = w[0] &lt;= i ? v[0] : 0;
+        }
+        //填充其他行和列
+        for (int i = 1; i &lt; length; i++) {
+            for (int j = 0; j &lt;= C; j++) {
+                dp[i][j] = dp[i - 1][j];
+                if (w[i] &lt;= j) {
+                    dp[i][j] = Math.max(dp[i][j], v[i] + dp[i - 1][j - w[i]]);
+                }
+            }
+        }
+        return dp[length - 1][C];
+    }
+
+    public static void main(String[] args) {
+        int[] w = {2, 1, 3, 2};
+        int[] v = {12, 10, 20, 15};
+        int C = 5;//包大小
+        System.out.println(dpKnapsack(w, v, 5));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5、拓展"><a href="#5、拓展" class="headerlink" title="5、拓展"></a>5、拓展</h3><ul>
+<li><p><strong>问题</strong>：给定一个仅包含正整数的非空数组，确定该数组是否可以分成两部分，要求两部分的和相等</p>
+</li>
+<li><p>问题解析：</p>
+<p>该问题我们可以利用背包问题的思想进行求解。</p>
+</li>
+</ul>
+<p>假设给定元素个数为n的数组arr，数组元素的和为sum，对应于背包问题，等价于有n个物品，每个物品的重量和价值均为为arr[i]，背包的限重为sum/2，求解背包中的物品最大价值为多少？</p>
+<ul>
+<li>要求使用本章介绍的循环方法完成此题。</li>
+</ul>
 
                 
             </div>
@@ -570,7 +698,7 @@ git push -u origin master        //把本地仓库的文件推送到远程仓库
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://liulei-root.github.io/2021/060421155.html">https://liulei-root.github.io/2021/060421155.html</a>
+                    <a href="https://liulei-root.github.io/2021/081138113.html">https://liulei-root.github.io/2021/081138113.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -608,16 +736,16 @@ git push -u origin master        //把本地仓库的文件推送到远程仓库
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/gitee/">
-                                    <span class="chip bg-color">gitee</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
                                 </a>
                             
-                                <a href="/tags/idea/">
-                                    <span class="chip bg-color">idea</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
                         </div>
@@ -789,54 +917,56 @@ git push -u origin master        //把本地仓库的文件推送到远程仓库
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/070754183.html">
+                <a href="/2021/081138113.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java高级 如何理解Spring IoC中的控制反转、依赖倒置原则、依赖注入、控制反转容器？">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="动态规划经典例题“0-1背包”细节分析">
                         
-                        <span class="card-title">Java高级 如何理解Spring IoC中的控制反转、依赖倒置原则、依赖注入、控制反转容器？</span>
+                        <span class="card-title">动态规划经典例题“0-1背包”细节分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这里只是很粗略的讲了一下我自己对IoC和DI的理解。主要的目的是在于最大限度避免晦涩难懂的专业词汇，用尽量简洁，通俗，直观的例子来解释这些概念。
+                            动态规划解题的核心步骤是：找到问题的状态转移方程dp。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring/" class="post-category">
-                                    Spring
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Spring-IoC/">
-                        <span class="chip bg-color">Spring IoC</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
-                    <a href="/tags/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">底层原理</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/DI/">
-                        <span class="chip bg-color">DI</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
@@ -850,31 +980,31 @@ git push -u origin master        //把本地仓库的文件推送到远程仓库
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/060263789.html">
+                <a href="/2021/072326875.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Git分布式版本控制工具">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="算法思维——简单的方式打开动态规划">
                         
-                        <span class="card-title">Git分布式版本控制工具</span>
+                        <span class="card-title">算法思维——简单的方式打开动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git是分布式版本控制系统（Distributed Version Control System，简称 DVCS）。
+                            动态规划的核心思想是：大规模问题的答案可以由小规模问题的答案递推得到。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -884,16 +1014,16 @@ git push -u origin master        //把本地仓库的文件推送到远程仓库
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/gitee/">
-                        <span class="chip bg-color">gitee</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>

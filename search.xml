@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>动态规划经典例题“0-1背包”细节分析</title>
+      <link href="2021/081138113.html"/>
+      <url>2021/081138113.html</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><h2 id="动态规划经典例题“0-1背包”细节分析"><a href="#动态规划经典例题“0-1背包”细节分析" class="headerlink" title="动态规划经典例题“0-1背包”细节分析"></a>动态规划经典例题“0-1背包”细节分析</h2><h3 id="1、动态规划原理回顾"><a href="#1、动态规划原理回顾" class="headerlink" title="1、动态规划原理回顾"></a>1、动态规划原理回顾</h3><ol><li><p>java实现动态规划的两种方式<br>方法一：递归<br>方法二：循环</p></li><li><p>原理<br>动态规划简单说就是当前结果仅依赖于几个子问题的结果</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">比如汉诺塔问题，把n个盘从A移动到C，仅依赖于：①把n-1个盘A --&gt;B (a步)②把最后一个盘从A --&gt;C (1步)③把n-1个盘B–&gt;C (b步)先得到 res=a+b+1而其中的a，b 又可以类似res一样分别分解成子问题，(b同理)a=a(n-1)+b(n-1)+1a(n-1)=a(n-2)+b(n-2)+1…a(2)=a(1)+b(1)+1此时a(1)=b(1)=1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="2、问题原型"><a href="#2、问题原型" class="headerlink" title="2、问题原型"></a>2、问题原型</h3></li></ol><p>如果对动态规划不熟悉的小伙伴可以先看看我的前一篇文章：</p><p><a href="https://blog.csdn.net/liulei952413829/article/details/119041491">算法思维——简单的方式打开动态规划</a></p><p><a href="https://liulei-root.github.io/2021/072326875.html">个人博客地址：https://liulei-root.github.io/2021/072326875.html</a></p><p><strong>0-1背包问题</strong>：</p><p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/1.jpg" alt="1"></p><ul><li>给定n个重量为w1，w2，w3，…,wn，价值为v1，v2，v3，…,vn的物品和容量为C的背包</li><li>求这个物品中一个最有价值的子集，使得在满足背包的容量的前提下，包内的总价值最大</li><li>注意：0-1背包问题指的是每个物品只能使用一次</li></ul><p><strong>思路解析</strong>：</p><p>在思考解题方式之前，根据我们对动态规划算法的了解，我们首先需要找到这个问题的状态转移方程，这是解决动态规划问题的核心，接下来我们一起来分析这个问题：</p><ul><li>背包问题无非有以下两种情况之一：</li><li>情况一，第i件物品太重放不进去,此时总价值为：f(w(i-1),C)</li><li>情况二，放入第i件物品，此时总价值为：v(i)+f(w(i-1),C-w(i))</li><li>于是得到状态转移方程，也就是两种选择中总价值最大的方案：放入或不放入 f(w(i),C) = max( f(w(i-1),C) , v(i)+f(w(i−1),C−w(i)) )</li></ul><h3 id="3、递归方法"><a href="#3、递归方法" class="headerlink" title="3、递归方法"></a>3、递归方法</h3><p>首先我们用递归的方式来尝试解决这个问题。</p><p>我们用f ( n , C ) 表示将前n个物品放进容量为C的背包里，得到的最大的价值。</p><p>我们用自顶向下的角度来看，假如我们已经进行到了最后一步（即求解将n个物品放到背包里获得的最大价值）,此时我们便有两种选择：</p><ol><li>不放第n个物品，此时总价值为F ( n − 1 , C )</li><li>放置第n个物品，此时总价值为v(n) + F ( n − 1 , C − w(n) ) )</li></ol><p>使用递归方式实现，有一个严重的问题需要解决，就是直接采用自顶向下的递归算法会导致要不止一次的解决公共子问题，因此效率是相当低下的。</p><p>我们可以将已经求得的子问题的结果保存下来，这样对子问题只会求解一次，这便是记忆化搜索，也就是我下面代码中memo的用法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.wedu.demo;public class KnapsackProblem {    private static int[][] memo;//中间变量，优化递归（记忆化搜索）    /**     * 自顶向下：递归     * @param w         物品重量     * @param v         物品价值     * @param index     当前待选择的物品索引     * @param capacity  当前背包有效容量     * @return          最大价值     */    public static int reKnapsack(int[] w, int[] v, int index, int capacity){        //如果索引无效或者容量不足，直接返回当前价值0        if (index &lt; 0 || capacity &lt;= 0)            return 0;        //如果此子问题已经求解过，则直接返回上次求解的结果        if (memo[index][capacity] != 0) {            return memo[index][capacity];        }        //不放第index个物品所得价值        int res = reKnapsack(w, v, index - 1, capacity);        //放第index个物品所得价值（前提是：第index个物品可以放得下）        if (w[index] &lt;= capacity) {            res = Math.max(res, v[index] + reKnapsack(w, v, index - 1, capacity - w[index]));        }        //添加子问题的解，便于下次直接使用        memo[index][capacity] = res;        return res;    }    public static void main(String[] args) {        int[] w = {2, 1, 3, 2};        int[] v = {12, 10, 20, 15};        int length = w.length;        int C = 5;//包大小        memo = new int[length][C + 1];//初始化中间变量        System.out.println(reKnapsack(w, v, length-1, 5));    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="4、循环方法"><a href="#4、循环方法" class="headerlink" title="4、循环方法"></a>4、循环方法</h3><p>循环方法，也是动态规划问题最常用的解题方法，使用这个方法，我们需要先找到三个关键目标：</p><ol><li><p><strong>建立状态转移方程</strong></p><p>上面已经推导过：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">dp[i][j] = Math.max(dp[i][j], v[i] + dp[i - 1][j - w[i]])<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong>缓存并复用以往结果</strong></p><p>我们使用二维数组来记录子问题的解：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">int[][] dp = new int[length][C + 1];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong>按顺序从小往大算</strong></p><p>循环遍历。</p></li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.wedu.demo;public class KnapsackProblem {    /**     * 自底向上：x     * @param w     物品重量     * @param v     物品价值     * @param C     当前背包有效容量     * @return      最大价值     */    public static int dpKnapsack(int[] w, int[] v, int C){        int length = w.length;        if (length == 0) {            return 0;        }        int[][] dp = new int[length][C + 1];        //初始化第一行        //仅考虑容量为C的背包放第0个物品的情况        for (int i = 0; i &lt;= C; i++) {            dp[0][i] = w[0] &lt;= i ? v[0] : 0;        }        //填充其他行和列        for (int i = 1; i &lt; length; i++) {            for (int j = 0; j &lt;= C; j++) {                dp[i][j] = dp[i - 1][j];                if (w[i] &lt;= j) {                    dp[i][j] = Math.max(dp[i][j], v[i] + dp[i - 1][j - w[i]]);                }            }        }        return dp[length - 1][C];    }    public static void main(String[] args) {        int[] w = {2, 1, 3, 2};        int[] v = {12, 10, 20, 15};        int C = 5;//包大小        System.out.println(dpKnapsack(w, v, 5));    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="5、拓展"><a href="#5、拓展" class="headerlink" title="5、拓展"></a>5、拓展</h3><ul><li><p><strong>问题</strong>：给定一个仅包含正整数的非空数组，确定该数组是否可以分成两部分，要求两部分的和相等</p></li><li><p>问题解析：</p><p>该问题我们可以利用背包问题的思想进行求解。</p></li></ul><p>假设给定元素个数为n的数组arr，数组元素的和为sum，对应于背包问题，等价于有n个物品，每个物品的重量和价值均为为arr[i]，背包的限重为sum/2，求解背包中的物品最大价值为多少？</p><ul><li>要求使用本章介绍的循环方法完成此题。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态规划 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法思维——简单的方式打开动态规划</title>
       <link href="2021/072326875.html"/>
       <url>2021/072326875.html</url>
@@ -268,9 +297,9 @@
             
             <tag> Java进阶 </tag>
             
-            <tag> 数据库 </tag>
-            
             <tag> 三层架构 </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -647,11 +676,11 @@
             
             <tag> Java基础语法 </tag>
             
-            <tag> 变量 </tag>
-            
             <tag> 修饰符 </tag>
             
             <tag> 类 </tag>
+            
+            <tag> 变量 </tag>
             
             <tag> 方法 </tag>
             
@@ -680,11 +709,11 @@
             
             <tag> Java基础语法 </tag>
             
-            <tag> 多态 </tag>
+            <tag> 封装 </tag>
             
             <tag> 继承 </tag>
             
-            <tag> 封装 </tag>
+            <tag> 多态 </tag>
             
             <tag> 修饰符 </tag>
             
