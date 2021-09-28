@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>idea创建SpringMVC配置文件模板，spring.xml、mybatis.xml、web.xml模板一应俱全</title>
+      <link href="2021/092833402.html"/>
+      <url>2021/092833402.html</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><h2 id="idea创建SpringMVC配置文件模板，spring-xml、mybatis-xml、web-xml模板一应俱全"><a href="#idea创建SpringMVC配置文件模板，spring-xml、mybatis-xml、web-xml模板一应俱全" class="headerlink" title="idea创建SpringMVC配置文件模板，spring.xml、mybatis.xml、web.xml模板一应俱全"></a>idea创建SpringMVC配置文件模板，spring.xml、mybatis.xml、web.xml模板一应俱全</h2><p>在SSM项目开发中，会用到很多的配置文件，比如spring-mvc.xml,web.xml,mybatis-config.xml等等，在开发过程中我们往往只想往里面添加我们想要的配置即可，其他的像配置文件的dtd，文件头等既难记，也不好写，jdbc.properties等配置文件的内容几乎不会改变写起来也比较繁琐，好在idea提供给大家创建模板的功能，可以给大家减少这些繁琐的操作。</p><p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/image-20210928093139697.png" alt="image-20210928093139697"></p><p>下面提供一整套的配置文件模板供大家使用：</p><h4 id="1、spring-xml模板"><a href="#1、spring-xml模板" class="headerlink" title="1、spring.xml模板"></a>1、spring.xml模板</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>beans</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans<span class="token punctuation">"</span></span>       <span class="token attr-name"><span class="token namespace">xmlns:</span>context</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/context<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>p</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/p<span class="token punctuation">"</span></span>       <span class="token attr-name"><span class="token namespace">xmlns:</span>aop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/aop<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>tx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/tx<span class="token punctuation">"</span></span>       <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>       <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsdhttp://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsdhttp://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsdhttp://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>beans</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="2、web-xml模板"><a href="#2、web-xml模板" class="headerlink" title="2、web.xml模板"></a>2、web.xml模板</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>web-app</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://xmlns.jcp.org/xml/ns/javaee<span class="token punctuation">"</span></span>         <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://xmlns.jcp.org/xml/ns/javaee                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd<span class="token punctuation">"</span></span>         <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>4.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>web-app</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="3、mybatis-config-xml模板"><a href="#3、mybatis-config-xml模板" class="headerlink" title="3、mybatis-config.xml模板"></a>3、mybatis-config.xml模板</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">configuration</span>        <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Config 3.0//EN"</span>        <span class="token string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span><span class="token punctuation">&gt;</span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="4、mapper-xml模板"><a href="#4、mapper-xml模板" class="headerlink" title="4、mapper.xml模板"></a>4、mapper.xml模板</h4><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">mapper</span> <span class="token name">PUBLIC</span> <span class="token string">"-//mybatis.org//DTD Mapper 3.0//EN"</span> <span class="token string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="5、jdbc-properties模板"><a href="#5、jdbc-properties模板" class="headerlink" title="5、jdbc.properties模板"></a>5、jdbc.properties模板</h4><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">jdbc.driver=com.mysql.cj.jdbc.Driverjdbc.url=jdbc:mysql://localhost:3306/javaeedatabase?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false&amp;allowPublicKeyRetrieval=truejdbc.username=rootjdbc.password=root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h4 id="6、log4j-properties模板"><a href="#6、log4j-properties模板" class="headerlink" title="6、log4j.properties模板"></a>6、log4j.properties模板</h4><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"># Global logging configurationlog4j.rootLogger=DEBUG, stdout# Console output...log4j.appender.stdout=org.apache.log4j.ConsoleAppenderlog4j.appender.stdout.layout=org.apache.log4j.PatternLayoutlog4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringMVC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringMVC </tag>
+            
+            <tag> 配置文件 </tag>
+            
+            <tag> SSM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java高级 SSM项目部署以及ajax的详细使用过程</title>
       <link href="2021/092842322.html"/>
       <url>2021/092842322.html</url>
@@ -22,13 +51,13 @@
             
             <tag> ajax </tag>
             
-            <tag> Spring </tag>
-            
-            <tag> mbatis </tag>
-            
             <tag> SpringMVC </tag>
             
             <tag> SSM </tag>
+            
+            <tag> Spring </tag>
+            
+            <tag> mbatis </tag>
             
         </tags>
       
@@ -740,11 +769,11 @@
             
             <tag> 修饰符 </tag>
             
+            <tag> 变量 </tag>
+            
             <tag> 类 </tag>
             
             <tag> 方法 </tag>
-            
-            <tag> 变量 </tag>
             
         </tags>
       
@@ -773,11 +802,11 @@
             
             <tag> 多态 </tag>
             
+            <tag> 封装 </tag>
+            
             <tag> 继承 </tag>
             
             <tag> 修饰符 </tag>
-            
-            <tag> 封装 </tag>
             
         </tags>
       
