@@ -6,7 +6,7 @@
   <link href="https://liulei-root.github.io/atom.xml" rel="self"/>
   
   <link href="https://liulei-root.github.io/"/>
-  <updated>2021-08-11T09:37:51.732Z</updated>
+  <updated>2021-09-28T00:53:16.176Z</updated>
   <id>https://liulei-root.github.io/</id>
   
   <author>
@@ -17,11 +17,73 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java高级 SSM项目部署以及ajax的详细使用过程</title>
+    <link href="https://liulei-root.github.io/2021/092842322.html"/>
+    <id>https://liulei-root.github.io/2021/092842322.html</id>
+    <published>2021-09-27T16:29:42.000Z</published>
+    <updated>2021-09-28T00:53:16.176Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Java高级-SSM项目部署以及ajax的详细使用过程&quot;&gt;&lt;a href=&quot;#Java高级-SSM项目部署以及ajax的详细使用过程&quot; class=&quot;headerlink&quot; title=&quot;Java高级</summary>
+        
+      
+    
+    
+    
+    <category term="Spring" scheme="https://liulei-root.github.io/categories/Spring/"/>
+    
+    
+    <category term="ajax" scheme="https://liulei-root.github.io/tags/ajax/"/>
+    
+    <category term="Spring" scheme="https://liulei-root.github.io/tags/Spring/"/>
+    
+    <category term="mbatis" scheme="https://liulei-root.github.io/tags/mbatis/"/>
+    
+    <category term="SpringMVC" scheme="https://liulei-root.github.io/tags/SpringMVC/"/>
+    
+    <category term="SSM" scheme="https://liulei-root.github.io/tags/SSM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java高级 表单form提交中action和ajax使用区别</title>
+    <link href="https://liulei-root.github.io/2021/092633819.html"/>
+    <id>https://liulei-root.github.io/2021/092633819.html</id>
+    <published>2021-09-26T02:51:30.000Z</published>
+    <updated>2021-09-26T02:55:00.419Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Java高级-表单form提交中action和ajax使用区别&quot;&gt;&lt;a href=&quot;#Java高级-表单form提交中action和ajax使用区别&quot; class=&quot;headerlink&quot; title=&quot;Java高级</summary>
+        
+      
+    
+    
+    
+    <category term="Spring" scheme="https://liulei-root.github.io/categories/Spring/"/>
+    
+    
+    <category term="表单提交" scheme="https://liulei-root.github.io/tags/%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4/"/>
+    
+    <category term="ajax" scheme="https://liulei-root.github.io/tags/ajax/"/>
+    
+    <category term="action" scheme="https://liulei-root.github.io/tags/action/"/>
+    
+  </entry>
+  
+  <entry>
     <title>动态规划经典例题“0-1背包”细节分析</title>
     <link href="https://liulei-root.github.io/2021/081138113.html"/>
     <id>https://liulei-root.github.io/2021/081138113.html</id>
     <published>2021-08-11T09:27:00.000Z</published>
-    <updated>2021-08-11T09:37:51.732Z</updated>
+    <updated>2021-08-11T09:39:27.932Z</updated>
     
     
       
@@ -321,9 +383,9 @@
     
     <category term="Java进阶" scheme="https://liulei-root.github.io/tags/Java%E8%BF%9B%E9%98%B6/"/>
     
-    <category term="三层架构" scheme="https://liulei-root.github.io/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
-    
     <category term="数据库" scheme="https://liulei-root.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="三层架构" scheme="https://liulei-root.github.io/tags/%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
@@ -570,61 +632,6 @@
     <category term="继承" scheme="https://liulei-root.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
     
     <category term="设计模式" scheme="https://liulei-root.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法  三大特性之一——多态</title>
-    <link href="https://liulei-root.github.io/2021/03151649.html"/>
-    <id>https://liulei-root.github.io/2021/03151649.html</id>
-    <published>2021-03-15T07:20:00.000Z</published>
-    <updated>2021-03-17T12:21:31.084Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Java基础语法-三大特性之一——多态&quot;&gt;&lt;a href=&quot;#Java基础语法-三大特性之一——多态&quot; class=&quot;headerlink&quot; title=&quot;Java基础语法  三大特性之一——多态&quot;&gt;&lt;/a&gt;Java基础语法 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    
-    <category term="多态" scheme="https://liulei-root.github.io/tags/%E5%A4%9A%E6%80%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础语法  三大特性之一——继承</title>
-    <link href="https://liulei-root.github.io/2021/03122671.html"/>
-    <id>https://liulei-root.github.io/2021/03122671.html</id>
-    <published>2021-03-12T07:25:00.000Z</published>
-    <updated>2021-03-17T12:21:31.082Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;Java基础语法-三大特性之一——继承&quot;&gt;&lt;a href=&quot;#Java基础语法-三大特性之一——继承&quot; class=&quot;headerlink&quot; title=&quot;Java基础语法  三大特性之一——继承&quot;&gt;&lt;/a&gt;Java基础语法 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="Java基础语法" scheme="https://liulei-root.github.io/tags/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    
-    <category term="继承" scheme="https://liulei-root.github.io/tags/%E7%BB%A7%E6%89%BF/"/>
     
   </entry>
   
