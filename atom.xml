@@ -6,7 +6,7 @@
   <link href="https://liulei-root.github.io/atom.xml" rel="self"/>
   
   <link href="https://liulei-root.github.io/"/>
-  <updated>2021-09-28T01:48:54.070Z</updated>
+  <updated>2021-10-15T07:01:08.568Z</updated>
   <id>https://liulei-root.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>编程基础 进制的定义，二进制、十进制、十六进制的相互转换</title>
+    <link href="https://liulei-root.github.io/2021/101529978.html"/>
+    <id>https://liulei-root.github.io/2021/101529978.html</id>
+    <published>2021-10-15T06:59:21.000Z</published>
+    <updated>2021-10-15T07:01:08.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h2 id=&quot;编程基础-进制的定义，二进制、十进制、十六进制的相互转换&quot;&gt;&lt;a href=&quot;#编程基础-进制的定义，二进制、十进制、十六进制的相互转换&quot; class=&quot;headerlink&quot; title=&quot;编程基础</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
+    
+    
+    <category term="二进制" scheme="https://liulei-root.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+    
+    <category term="十进制" scheme="https://liulei-root.github.io/tags/%E5%8D%81%E8%BF%9B%E5%88%B6/"/>
+    
+    <category term="十六进制" scheme="https://liulei-root.github.io/tags/%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>idea创建SpringMVC配置文件模板，spring.xml、mybatis.xml、web.xml模板一应俱全</title>
     <link href="https://liulei-root.github.io/2021/092833402.html"/>
     <id>https://liulei-root.github.io/2021/092833402.html</id>
     <published>2021-09-28T01:47:20.000Z</published>
-    <updated>2021-09-28T01:48:54.070Z</updated>
+    <updated>2021-09-28T01:51:56.056Z</updated>
     
     
       
@@ -541,11 +571,11 @@
     
     <category term="git" scheme="https://liulei-root.github.io/tags/git/"/>
     
-    <category term="Hexo" scheme="https://liulei-root.github.io/tags/Hexo/"/>
-    
     <category term="github" scheme="https://liulei-root.github.io/tags/github/"/>
     
     <category term="Typora" scheme="https://liulei-root.github.io/tags/Typora/"/>
+    
+    <category term="Hexo" scheme="https://liulei-root.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -606,34 +636,6 @@
     <category term="多态" scheme="https://liulei-root.github.io/tags/%E5%A4%9A%E6%80%81/"/>
     
     <category term="抽象" scheme="https://liulei-root.github.io/tags/%E6%8A%BD%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java设计模式  设计模式六大原则</title>
-    <link href="https://liulei-root.github.io/2021/031835127.html"/>
-    <id>https://liulei-root.github.io/2021/031835127.html</id>
-    <published>2021-03-18T07:55:00.000Z</published>
-    <updated>2021-04-27T06:31:42.537Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;Java设计模式-设计模式六大原则&quot;&gt;&lt;a href=&quot;#Java设计模式-设计模式六大原则&quot; class=&quot;headerlink&quot; title=&quot;Java设计模式  设计模式六大原则&quot;&gt;&lt;/a&gt;Java设计模式 </summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://liulei-root.github.io/categories/Java/"/>
-    
-    
-    <category term="设计模式" scheme="https://liulei-root.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    <category term="编程" scheme="https://liulei-root.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
