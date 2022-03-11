@@ -1,0 +1,1978 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="递归">
+    <meta name="description" content="רע�ڼ���,��������,����֪ʶ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>算法思维——递归算法解析 | New Life</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="New Life" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">New Life</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">New Life</div>
+        <div class="logo-desc">
+            
+            רע�ڼ���,��������,����֪ʶ
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/liulei-root/liulei-root.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/liulei-root/liulei-root.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">算法思维——递归算法解析</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%80%92%E5%BD%92/">
+                                <span class="chip bg-color">递归</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+			
+			<div class="text-color" align=center style="font-size:large">
+				
+					<i class="far fa-square"></i> 刘磊
+				
+			</div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-11
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-03-11
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="递归算法解析"><a href="#递归算法解析" class="headerlink" title="递归算法解析"></a>递归算法解析</h2><p>[toc]</p>
+<h3 id="一、循环，递归，迭代，遍历的理解"><a href="#一、循环，递归，迭代，遍历的理解" class="headerlink" title="一、循环，递归，迭代，遍历的理解"></a>一、循环，递归，迭代，遍历的理解</h3><p>​        学习递归算法之前，我们先理解清楚以下几个专有名词的概念：<strong>循环，递归，迭代、遍历</strong>。</p>
+<ul>
+<li><p><strong>循环</strong>(loop)——最基础的概念，所有重复的行为都可以归为循环</p>
+</li>
+<li><p><strong>递归</strong>(recursion)——在函数内调用自身，将复杂情况逐步转化成基本情况</p>
+</li>
+<li><p><strong>(数学)迭代</strong>(iterate)——在多次循环中逐步接近结果</p>
+</li>
+<li><p><strong>(编程)迭代</strong>(iterate)——按顺序访问线性结构中的每一项</p>
+</li>
+<li><p><strong>遍历</strong>(traversal)——按规则访问非线性结构中的每一项</p>
+<p>这些概念都表示“重复”的含义，彼此互相交叉，在上下文清晰的情况下，不必做过于细致的区分。</p>
+</li>
+</ul>
+<p>​        今天先详细地给大家讲一讲循环和递归的相关知识，后面大家学到数据结构的时候，我再详细地给大家介绍迭代和遍历的知识点。</p>
+<p>​        $在进入今天的主题之前，我们先来看一段知乎上一位大神关于递归和循环非常有意思的解释$：</p>
+<p>　     **$\textcolor{red}{递归}$**：你打开面前这扇门，看到屋里面还有一扇门。你走过去，发现手中的钥匙还可以打开它，你推开门，发现里面还有一扇门，你继续打开它。若干次之后，你打开面前的门后，发现只有一间屋子，没有门了。然后，你开始原路返回，每走回一间屋子，你数一次，走到入口的时候，你可以回答出你到底用这你把钥匙打开了几扇门。</p>
+<p>​        **$\textcolor{red}{循环}$**：你打开面前这扇门，看到屋里面还有一扇门。你走过去，发现手中的钥匙还可以打开它，你推开门，发现里面还有一扇门（若前面两扇门都一样，那么这扇门和前两扇门也一样；如果第二扇门比第一扇门小，那么这扇门也比第二扇门小，你继续打开这扇门，一直这样继续下去直到打开所有的门。但是，入口处的人始终等不到你回去告诉他答案。</p>
+<p>​        上面的比喻形象地阐述了递归与循环的内涵，那么接下来我们就开始正式的学习它们的精髓和用法。</p>
+<h3 id="二、递归的精髓"><a href="#二、递归的精髓" class="headerlink" title="二、递归的精髓"></a>二、递归的精髓</h3><h4 id="1-递归的定义"><a href="#1-递归的定义" class="headerlink" title="1. 递归的定义"></a>1. 递归的定义</h4><p>​        在数学与计算机科学中，递归是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。</p>
+<h4 id="2-递归思想的内涵-递归的精髓是什么？"><a href="#2-递归思想的内涵-递归的精髓是什么？" class="headerlink" title="2. 递归思想的内涵(递归的精髓是什么？)"></a>2. 递归思想的内涵(递归的精髓是什么？)</h4><p>​        正如上面所描述的场景，递归就是有去（递去）有回（归来），如下图所示。“有去”是指：递归问题必须可以分解为若干个规模较小，与原问题形式相同的子问题，这些子问题可以用相同的解题思路来解决，就像上面例子中的钥匙可以打开后面所有门上的锁一样；“有回”是指 : 这些问题的演化过程是一个从大到小，由近及远的过程，并且会有一个明确的终点(临界点)，一旦到达了这个临界点，就不用再往更小、更远的地方走下去。最后，从这个临界点开始，原路返回到原点，原问题解决。</p>
+<p><img src="https://liuleisex.oss-cn-chengdu.aliyuncs.com/Hexo/20170615220708910.png" alt="20170615220708910"></p>
+<p>　　 更直接地说，递归的基本思想就是把规模大的问题转化为规模小的相似的子问题来解决。特别地，在函数实现时，因为解决大问题的方法和解决小问题的方法往往是同一个方法，所以就产生了函数调用它自身的情况，这也正是递归的定义所在。<strong>格外重要的是，这个解决问题的函数必须有明确的结束条件，否则就会导致无限递归的情况</strong>。</p>
+<h4 id="3-用归纳法来理解递归"><a href="#3-用归纳法来理解递归" class="headerlink" title="3. 用归纳法来理解递归"></a>3. 用归纳法来理解递归</h4><p>​        数学都不差的我们，第一反应就是递归在数学上的模型是什么，毕竟我们对于问题进行数学建模比起代码建模拿手多了。观察递归，我们会发现，递归的数学模型其实就是 数学归纳法，这个在高中的数列里面是最常用的，下面我们一起回忆一下数学归纳法。</p>
+<p>​        数学归纳法适用于将解决的原问题转化为解决它的子问题，而它的子问题又变成子问题的子问题，而且我们发现这些问题其实都是一个模型，也就是说存在相同的逻辑归纳处理项。当然有一个是例外的，也就是归纳结束的那一个处理方法不适用于我们的归纳处理项，<strong>当然也不能适用</strong>，否则我们就无穷归纳了。总的来说，归纳法主要包含以下三个关键要素：</p>
+<ol>
+<li>步进表达式：问题蜕变成子问题的表达式</li>
+<li>结束条件：什么时候可以不再使用步进表达式</li>
+<li>直接求解表达式：在结束条件下能够直接计算返回值的表达式</li>
+</ol>
+<p>​        事实上，这也正是某些数学中的数列问题在利用编程的方式去解决时可以使用递归的原因，比如著名的<strong>斐波那契数列</strong>问题。</p>
+<h4 id="4-递归的三要素"><a href="#4-递归的三要素" class="headerlink" title="4. 递归的三要素"></a>4. 递归的三要素</h4><p>　　 在我们了解了递归的基本思想及其数学模型之后，我们如何才能写出一个漂亮的递归程序呢？主要把握好如下三个方面：</p>
+<ul>
+<li>明确递归终止条件</li>
+<li>给出递归终止时的处理办法</li>
+<li>提取重复的逻辑，缩小问题规模</li>
+</ul>
+<p><strong>1). 明确递归终止条</strong></p>
+<p>​        我们知道，递归就是有去有回，既然这样，那么必然应该有一个明确的临界点，程序一旦到达了这个临界点，就不用继续往下递去而是开始实实在在的归来。换句话说，该临界点就是一种简单情境，可以防止无限递归。</p>
+<p><strong>2). 给出递归终止时的处理办法</strong></p>
+<p>​        我们刚刚说到，在递归的临界点存在一种简单情境，在这种简单情境下，我们应该直接给出问题的解决方案。一般地，在这种情境下，问题的解决方案是直观的、容易的。</p>
+<p><strong>3). 提取重复的逻辑，缩小问题规模</strong></p>
+<p>​        我们在阐述递归思想内涵时谈到，递归问题必须可以分解为若干个规模较小、与原问题形式相同的子问题，这些子问题可以用相同的解题思路来解决。从程序实现的角度而言，我们需要抽象出一个干净利落的重复的逻辑，以便使用相同的方式解决子问题。</p>
+<h4 id="5-递归算法的编程模型"><a href="#5-递归算法的编程模型" class="headerlink" title="5. 递归算法的编程模型"></a>5. 递归算法的编程模型</h4><p>　　 在我们明确递归算法设计三要素后，接下来就需要着手开始编写具体的算法了。在编写算法时，不失一般性，我们给出两种典型的递归算法设计模型，如下所示。</p>
+<p><strong>模型一： 在递去的过程中解决问题</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">recursion</span><span class="token punctuation">(</span><span class="token parameter">大规模</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>end_condition<span class="token punctuation">)</span><span class="token punctuation">{</span>      <span class="token comment">// 明确的递归终止条件</span>
+        end<span class="token punctuation">;</span>   <span class="token comment">// 简单情景</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>            <span class="token comment">// 在将问题转换为子问题的每一步，解决该步中剩余部分的问题</span>
+        solve<span class="token punctuation">;</span>                <span class="token comment">// 递去</span>
+        <span class="token function">recursion</span><span class="token punctuation">(</span>小规模<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 递到最深处后，不断地归来</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>模型二： 在归来的过程中解决问题</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">recursion</span><span class="token punctuation">(</span><span class="token parameter">大规模</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>end_condition<span class="token punctuation">)</span><span class="token punctuation">{</span>      <span class="token comment">// 明确的递归终止条件</span>
+        end<span class="token punctuation">;</span>   <span class="token comment">// 简单情景</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>            <span class="token comment">// 先将问题全部描述展开，再由尽头“返回”依次解决每步中剩余部分的问题</span>
+        <span class="token function">recursion</span><span class="token punctuation">(</span>小规模<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 递去</span>
+        solve<span class="token punctuation">;</span>                <span class="token comment">// 归来</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="6-递归的应用场景"><a href="#6-递归的应用场景" class="headerlink" title="6. 递归的应用场景"></a>6. 递归的应用场景</h4><p>​        在我们实际学习工作中，递归算法一般用于解决三类问题：</p>
+<ol>
+<li><p>问题的定义是按递归定义的（Fibonacci函数，阶乘，…）</p>
+</li>
+<li><p>问题的解法是递归的（有些问题只能使用递归方法来解决，例如，汉诺塔问题，…）</p>
+</li>
+<li><p>数据结构是递归的（链表、树等的操作，包括树的遍历，树的深度，…）。</p>
+<p>在下文我们将给出递归算法的一些经典应用案例，这些案例基本都属于第三种类型问题的范畴。</p>
+</li>
+</ol>
+<h3 id="三、递归与循环"><a href="#三、递归与循环" class="headerlink" title="三、递归与循环"></a>三、递归与循环</h3><p>　　 递归与循环是两种不同的解决问题的典型思路。递归通常很直白地描述了一个问题的求解过程，因此也是最容易被想到解决方式。循环其实和递归具有相同的特性，即做重复任务，但有时使用循环的算法并不会那么清晰地描述解决问题步骤。单从算法设计上看，递归和循环并无优劣之别。</p>
+<p>​        然而，在实际开发中，因为函数调用的开销，递归常常会带来性能问题，特别是在求解规模不确定的情况下；而循环因为没有函数调用开销，所以效率会比递归高。递归求解方式和循环求解方式往往可以互换，也就是说，如果用到递归的地方可以很方便使用循环替换，而不影响程序的阅读，那么替换成循环往往是好的。</p>
+<p>​        问题的递归实现转换成非递归实现一般需要两步工作：</p>
+<ol>
+<li>自己建立“堆栈(一些局部变量)”来保存这些内容以便代替系统栈，比如树的三种非递归遍历方式</li>
+<li>把对递归的调用转变为对循环处理</li>
+</ol>
+<p>　　 在下文中我们将给出递归算法的一些经典应用案例，对于这些案例的实现，我们一般会给出递归和非递归两种解决方案，以便读者体会。</p>
+<h3 id="四、经典递归问题实战"><a href="#四、经典递归问题实战" class="headerlink" title="四、经典递归问题实战"></a>四、经典递归问题实战</h3><h4 id="1-第一类问题：问题的定义是按递归定义的"><a href="#1-第一类问题：问题的定义是按递归定义的" class="headerlink" title="1. 第一类问题：问题的定义是按递归定义的"></a>1. 第一类问题：问题的定义是按递归定义的</h4><p><strong>(1). 阶乘</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * Title: 阶乘的实现 
+ * Description:
+ *      递归解法
+ *      非递归解法
+ */
+public class Factorial {
+    /**     
+     * @description 阶乘的递归实现   
+     * @param n
+     * @return     
+     */
+    public static long f(int n){
+        if(n == 1)   // 递归终止条件 
+            return 1;    // 简单情景
+
+        return n*f(n-1);  // 相同重复逻辑，缩小问题的规模
+    }
+
+--------------------------------我是分割线-------------------------------------
+
+    /**     
+     * @description 阶乘的非递归实现  
+     * @param n
+     * @return     
+     */
+    public static long f_loop(int n) {
+        long result = n;
+        while (n &gt; 1) {
+            n--;
+            result = result * n;
+        }
+        return result;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(2). 斐波纳契数列</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * Title: 斐波纳契数列
+ *
+ * Description: 斐波纳契数列，又称黄金分割数列，指的是这样一个数列：1、1、2、3、5、8、13、21、……
+ * 在数学上，斐波纳契数列以如下被以递归的方法定义：F0=0，F1=1，Fn=F(n-1)+F(n-2)（n&gt;=2，n∈N*）。
+ *
+ * 两种递归解法：经典解法和优化解法
+ * 两种非递归解法：递推法和数组法
+ *
+ */
+public class FibonacciSequence {
+
+    /**
+     * @description 经典递归法求解
+     * 
+     * 斐波那契数列如下：
+     * 
+     *  1,1,2,3,5,8,13,21,34,...
+     * 
+     * *那么，计算fib(5)时，需要计算1次fib(4),2次fib(3),3次fib(2)，调用了2次fib(1)*，即：
+     * 
+     *  fib(5) = fib(4) + fib(3)
+     *  
+     *  fib(4) = fib(3) + fib(2) ；fib(3) = fib(2) + fib(1)
+     *  
+     *  fib(3) = fib(2) + fib(1)
+     *  
+     * 这里面包含了许多重复计算，而实际上我们只需计算fib(4)、fib(3)、fib(2)和fib(1)各一次即可，
+     * 后面的optimizeFibonacci函数进行了优化，使时间复杂度降到了O(n).
+     * 
+     * @param n
+     * @return
+     */
+    public static int fibonacci(int n) {
+        if (n == 1 || n == 2) {     // 递归终止条件
+            return 1;       // 简单情景
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2); // 相同重复逻辑，缩小问题的规模
+    }
+-------—---------------—————————–我是分割线—————————---------------------———-
+    
+    /**     
+     * @description 对经典递归法的优化
+     * 
+     * 斐波那契数列如下：
+     * 
+     *  1,1,2,3,5,8,13,21,34,...
+     * 
+     * 那么，我们可以这样看：fib(1,1,5) = fib(1,2,4) = fib(2,3,3) = 5
+     * 
+     * 也就是说，以1,1开头的斐波那契数列的第五项正是以1,2开头的斐波那契数列的第四项，
+     * 而以1,2开头的斐波那契数列的第四项也正是以2,3开头的斐波那契数列的第三项，
+     * 更直接地，我们就可以一步到位：fib(2,3,3) = 2 + 3 = 5,计算结束。 
+     * 
+     * 注意，前两个参数是数列的开头两项，第三个参数是我们想求的以前两个参数开头的数列的第几项。
+     * 
+     * 时间复杂度：O(n)
+     *   
+     * @param first 数列的第一项
+     * @param second 数列的第二项
+     * @param n 目标项
+     * @return     
+     */
+    public static int optimizeFibonacci(int first, int second, int n) {
+        if (n &gt; 0) {
+            if(n == 1){    // 递归终止条件
+                return first;       // 简单情景
+            }else if(n == 2){            // 递归终止条件
+                return second;      // 简单情景
+            }else if (n == 3) {         // 递归终止条件
+                return first + second;      // 简单情景
+            }
+            return optimizeFibonacci(second, first + second, n - 1);  // 相同重复逻辑，缩小问题规模
+        }
+        return -1;
+    }
+
+--------------------------------我是分割线-------------------------------------
+
+    /**
+     * @description 非递归解法：有去无回
+     * @param n
+     * @return
+     */
+    public static int fibonacci_loop(int n) {
+
+        if (n == 1 || n == 2) {   
+            return 1;
+        }
+
+        int result = -1;
+        int first = 1;      // 自己维护的"栈",以便状态回溯
+        int second = 1;     // 自己维护的"栈",以便状态回溯
+
+        for (int i = 3; i &lt;= n; i++) { // 循环
+            result = first + second;
+            first = second;
+            second = result;
+        }
+        return result;
+    }
+
+--------------------------------我是分割线-------------------------------------
+
+    /**     
+     * @description 使用数组存储斐波那契数列    
+     * @param n
+     * @return     
+     */
+    public static int fibonacci_array(int n) {
+        if (n &gt; 0) {
+            int[] arr = new int[n];   // 使用临时数组存储斐波纳契数列
+            arr[0] = arr[1] = 1;
+
+            for (int i = 2; i &lt; n; i++) {   // 为临时数组赋值
+                arr[i] = arr[i-1] + arr[i-2];
+            }
+            return arr[n - 1];
+        }
+        return -1;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(3). 杨辉三角的取值</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+   /**
+    * Title: 杨辉三角形又称Pascal三角形，它的第i+1行是(a+b)i的展开式的系数。
+    * 它的一个重要性质是：三角形中的每个数字等于它两肩上的数字相加。
+    * 
+    * 例如，下面给出了杨辉三角形的前4行： 
+    *    1 
+    *   1 1
+    *  1 2 1
+    * 1 3 3 1
+    * @description 递归获取杨辉三角指定行、列(从0开始)的值
+    *              注意：与是否创建杨辉三角无关
+    * @x  指定行
+    * @y  指定列  
+    */
+    public static int getValue(int x, int y) {
+        if(y &lt;= x &amp;&amp; y &gt;= 0){
+            if(y == 0 || x == y){   // 递归终止条件
+                return 1; 
+            }else{ 
+                // 递归调用，缩小问题的规模
+                return getValue(x-1, y-1) + getValue(x-1, y); 
+            }
+        }
+        return -1;
+    } 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(4). 回文字符串的判断</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"> /**
+  * Title: 回文字符串的判断
+  * Description: 回文字符串就是正读倒读都一样的字符串。如”98789”, “abccba”都是回文字符串
+  *
+  * 两种解法：
+  * 递归判断；
+  * 循环判断；
+  *      
+  */      
+public class PalindromeString {
+
+    /**     
+     * @description 递归判断一个字符串是否是回文字符串 
+     * @param s
+     * @return     
+     */
+    public static boolean isPalindromeString_recursive(String s){
+        int start = 0;
+        int end = s.length()-1;
+        if(end &gt; start){   // 递归终止条件:两个指针相向移动，当start超过end时，完成判断
+            if(s.charAt(start) != s.charAt(end)){
+                return false;
+            }else{
+                // 递归调用，缩小问题的规模
+                return isPalindromeString_recursive(s.substring(start+1).substring(0, end-1));
+            }
+        }
+        return true;
+    }
+
+--------------------------------我是分割线-------------------------------------
+
+    /**     
+     * @description 循环判断回文字符串
+     * @param s
+     * @return     
+     */
+    public static boolean isPalindromeString_loop(String s){
+        char[] str = s.toCharArray();
+        int start = 0;
+        int end = str.length-1;
+        while(end &gt; start){  // 循环终止条件:两个指针相向移动，当start超过end时，完成判断
+            if(str[end] != str[start]){
+                return false;
+            }else{
+                end --;
+                start ++;
+            }
+        }
+        return true;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(5). 字符串全排列</strong></p>
+<p><strong><em>递归解法：</em></strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * @description 从字符串数组中每次选取一个元素，作为结果中的第一个元素;然后，对剩余的元素全排列
+ * @param s     字符数组
+ * @param from  起始下标
+ * @param to    终止下标
+ */
+public static void getStringPermutations3(char[] s, int from, int to) {
+    if (s != null &amp;&amp; to &gt;= from &amp;&amp; to &lt; s.length &amp;&amp; from &gt;= 0) { // 边界条件检查
+        if (from == to) { // 递归终止条件
+            System.out.println(s); // 打印结果
+        } else {
+            for (int i = from; i &lt;= to; i++) {
+                swap(s, i, from); // 交换前缀,作为结果中的第一个元素，然后对剩余的元素全排列
+                getStringPermutations3(s, from + 1, to); // 递归调用，缩小问题的规模
+                swap(s, from, i); // 换回前缀，复原字符数组
+            }
+        }
+    }
+}
+
+/**
+ * @description 对字符数组中的制定字符进行交换
+ * @param s
+ * @param from
+ * @param to
+ */
+public static void swap(char[] s, int from, int to) {
+    char temp = s[from];
+    s[from] = s[to];
+    s[to] = temp;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong><em>非递归解法(字典序全排列)</em></strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * Title: 字符串全排列非递归算法(字典序全排列)
+ * escription: 字典序全排列，其基本思想是：
+ * 对需要求排列的字符串进行字典排序，即得到全排列中最小的排列.
+ * 然后,找到一个比它大的最小的全排列，一直重复这一步直到找到最大值,即字典排序的逆序列.
+ *
+ * 不需要关心字符串长度
+ *
+ */
+public class StringPermutationsLoop {
+    /**
+     * @description 字典序全排列
+     * 
+     * 设一个字符串(字符数组)的全排列有n个，分别是A1,A2,A3,...,An
+     * 
+     * 1. 找到最小的排列 Ai
+     * 2. 找到一个比Ai大的最小的后继排列Ai+1
+     * 3. 重复上一步直到没有这样的后继
+     * 
+     * 重点就是如何找到一个排列的直接后继:
+     * 对于字符串(字符数组)a0a1a2……an,
+     * 1. 从an到a0寻找第一次出现的升序排列的两个字符(即ai &lt; ai+1),那么ai+1是一个极值，因为ai+1之      *    后的字符为降序排列，记 top=i+1;
+     * 2. 从top处(包括top)开始查找比ai大的最小的值aj，记 minMax = j;
+     * 3. 交换minMax处和top-1处的字符;
+     * 4. 翻转top之后的字符(包括top)，即得到一个排列的直接后继排列
+     * 
+     * @param s     字符数组
+     * @param from  起始下标
+     * @param to    终止下标
+     */
+    public static void getStringPermutations4(char[] s, int from, int to) {
+
+        Arrays.sort(s,from,to+1);  // 对字符数组的所有元素进行升序排列，即得到最小排列 
+        System.out.println(s);    
+        char[] descendArr = getMaxPermutation(s, from, to); // 得到最大排列,即最小排列的逆序列
+        while (!Arrays.equals(s, descendArr)) {  // 循环终止条件：迭代至最大排列
+            if (s != null &amp;&amp; to &gt;= from &amp;&amp; to &lt; s.length &amp;&amp; from &gt;= 0) { // 边界条件检查
+                int top = getExtremum(s, from, to); // 找到序列的极值
+                int minMax = getMinMax(s, top, to);  // 从top处(包括top)查找比s[top-1]大的最小值所在的位置
+                swap(s, top - 1, minMax);  // 交换minMax处和top-1处的字符
+                s = reverse(s, top, to);   // 翻转top之后的字符
+                System.out.println(s);
+            }
+        }
+    }
+
+    /**
+     * @description 对字符数组中的制定字符进行交换
+     * @param s
+     * @param from
+     * @param to
+     */
+    public static void swap(char[] s, int from, int to) {
+        char temp = s[from];
+        s[from] = s[to];
+        s[to] = temp;
+    }
+
+    /**     
+     * @description 获取序列的极值   
+     * @param s 序列
+     * @param from 起始下标
+     * @param to 终止下标
+     * @return     
+     */
+    public static int getExtremum(char[] s, int from, int to) {
+        int index = 0;
+        for (int i = to; i &gt; from; i--) {
+            if (s[i] &gt; s[i - 1]) {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    /**     
+     * @description 从top处查找比s[top-1]大的最小值所在的位置
+     * @param s
+     * @param top 极大值所在位置
+     * @param to
+     * @return     
+     */
+    public static int getMinMax(char[] s, int top, int to) {
+        int index = top;
+        char base = s[top-1];
+        char temp = s[top];
+        for (int i = top + 1; i &lt;= to; i++) {
+            if (s[i] &gt; base &amp;&amp; s[i] &lt; temp) {
+                temp = s[i];
+                index = i;
+            }
+            continue;
+        }
+        return index;
+    }
+
+    /**     
+     * @description 翻转top(包括top)后的序列 
+     * @param s
+     * @param from
+     * @param to
+     * @return     
+     */
+    public static char[] reverse(char[] s, int top, int to) {
+        char temp;
+        while(top &lt; to){
+            temp = s[top];
+            s[top] = s[to];
+            s[to] = temp;
+            top ++;
+            to --;
+        }
+        return s;
+    }
+
+    /**     
+     * @description 根据最小排列得到最大排列
+     * @param s 最小排列
+     * @param from 起始下标
+     * @param to 终止下标
+     * @return     
+     */
+    public static char[] getMaxPermutation(char[] s, int from, int to) {
+        //将最小排列复制到一个新的数组中
+        char[] dsc = Arrays.copyOfRange(s, 0, s.length);
+        int first = from;
+        int end = to;
+        while(end &gt; first){  // 循环终止条件
+            char temp = dsc[first];
+            dsc[first] = dsc[end];
+            dsc[end] = temp;
+            first ++;
+            end --;
+        }
+        return dsc;
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(6). 二分查找</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * @description 二分查找的递归实现
+ * @param array 目标数组
+ * @param low 左边界
+ * @param high 右边界
+ * @param target 目标值
+ * @return 目标值所在位置
+ */
+public static int binarySearch(int[] array, int low, int high, int target) {
+
+        //递归终止条件
+        if(low &lt;= high){
+            int mid = (low + high) &gt;&gt; 1;
+            if(array[mid] == target){
+                return mid + 1;  // 返回目标值的位置，从1开始
+            }else if(array[mid] &gt; target){
+                // 由于array[mid]不是目标值，因此再次递归搜索时，可以将其排除
+                return binarySearch(array, low, mid-1, target);
+            }else{
+                // 由于array[mid]不是目标值，因此再次递归搜索时，可以将其排除
+                return binarySearch(array, mid+1, high, target);
+            }
+        }
+        return -1;   //表示没有搜索到
+    }
+
+--------------------------------我是分割线-------------------------------------
+
+/**     
+     * @description 二分查找的非递归实现   
+     * @param array 目标数组
+     * @param low 左边界
+     * @param high 右边界
+     * @param target 目标值
+     * @return 目标值所在位置
+     */
+public static int binarySearchNoRecursive(int[] array, int low, int high, int target) {
+
+        // 循环
+        while (low &lt;= high) {
+            int mid = (low + high) &gt;&gt; 1;
+            if (array[mid] == target) {
+                return mid + 1; // 返回目标值的位置，从1开始
+            } else if (array[mid] &gt; target) {
+                // 由于array[mid]不是目标值，因此再次递归搜索时，可以将其排除
+                high = mid -1;
+            } else {
+                // 由于array[mid]不是目标值，因此再次递归搜索时，可以将其排除
+                low = mid + 1;
+            }
+        }
+        return -1;  //表示没有搜索到
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-第二类问题：问题解法按递归算法实现"><a href="#2-第二类问题：问题解法按递归算法实现" class="headerlink" title="2. 第二类问题：问题解法按递归算法实现"></a>2. 第二类问题：问题解法按递归算法实现</h4><p><strong>(1). 汉诺塔问题</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * Title: 汉诺塔问题
+ * Description:古代有一个梵塔，塔内有三个座A、B、C，A座上有64个盘子，盘子大小不等，大的在下，小的在
+ *             上。
+ * 有一个和尚想把这64个盘子从A座移到C座，但每次只能允许移动一个盘子，并且在移动过程中，
+ * 3个座上的盘子始终保持大盘在下，
+ * 小盘在上。在移动过程中可以利用B座。要求输入层数，运算后输出每步是如何移动的。
+ *
+ */
+public class HanoiTower {
+
+    /**     
+     * @description 在程序中，我们把最上面的盘子称为第一个盘子，把最下面的盘子称为第N个盘子 
+     * @param level：盘子的个数
+     * @param from 盘子的初始地址
+     * @param inter 转移盘子时用于中转
+     * @param to 盘子的目的地址
+     */
+    public static void moveDish(int level, char from, char inter, char to) {
+
+        if (level == 1) { // 递归终止条件
+            System.out.println("从" + from + " 移动盘子" + level + " 号到" + to);
+        } else {
+            // 递归调用：将level-1个盘子从from移到inter(不是一次性移动，每次只能移动一个盘子,其中to用于周转)
+            moveDish(level - 1, from, to, inter); // 递归调用，缩小问题的规模
+            // 将第level个盘子从A座移到C座
+            System.out.println("从" + from + " 移动盘子" + level + " 号到" + to); 
+            // 递归调用：将level-1个盘子从inter移到to,from 用于周转
+            moveDish(level - 1, inter, from, to); // 递归调用，缩小问题的规模
+        }
+    }
+
+    public static void main(String[] args) {
+        int nDisks = 30;
+        moveDish(nDisks, 'A', 'B', 'C');
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-第三类问题：数据的结构是按递归定义的"><a href="#3-第三类问题：数据的结构是按递归定义的" class="headerlink" title="3. 第三类问题：数据的结构是按递归定义的"></a>3. 第三类问题：数据的结构是按递归定义的</h4><p><strong>(1). 二叉树深度</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * Title: 递归求解二叉树的深度
+ */
+public class BinaryTreeDepth {
+
+    /**     
+     * @description 返回二叉数的深度     
+     * @param t
+     * @return     
+     */
+    public static int getTreeDepth(Tree t) {
+
+        // 树为空
+        if (t == null) // 递归终止条件
+            return 0;
+
+        int left = getTreeDepth(t.left); // 递归求左子树深度，缩小问题的规模
+        int right = getTreeDepth(t.left); // 递归求右子树深度，缩小问题的规模
+
+        return left &gt; right ? left + 1 : right + 1;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>(2). 二叉树深度</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">/**
+ * @description 前序遍历(递归)
+ * @param root
+ * @return
+ */
+ public String preOrder(Node&lt;E&gt; root) {
+        StringBuilder sb = new StringBuilder(); // 存到递归调用栈
+        if (root == null) {   // 递归终止条件
+            return "";     // ji 
+        }else { // 递归终止条件
+            sb.append(root.data + " "); // 前序遍历当前结点
+            sb.append(preOrder(root.left)); // 前序遍历左子树
+            sb.append(preOrder(root.right)); // 前序遍历右子树
+            return sb.toString();
+        }       
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">刘磊</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://liulei-root.github.io/2022/031110918.html">https://liulei-root.github.io/2022/031110918.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">刘磊</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%80%92%E5%BD%92/">
+                                    <span class="chip bg-color">递归</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/031110918.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法思维——递归算法解析">
+                        
+                        <span class="card-title">算法思维——递归算法解析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            递归(recursion)——在函数内调用自身，将复杂情况逐步转化成基本情况。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%92%E5%BD%92/">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/031128758.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机网络">
+                        
+                        <span class="card-title">计算机网络</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            计算机网络是一个将分散的、具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: New Life<br />'
+            + '文章作者: liulei<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: blue;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="7660234225"
+                   fixed='true'
+                   autoplay='false'
+                   theme='blue'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">liulei</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">187.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "4";
+                    var startDate = "14";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/liulei-root/liulei-root.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:952413829@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=952413829" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 952413829" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
