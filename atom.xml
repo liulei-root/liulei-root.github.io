@@ -6,7 +6,7 @@
   <link href="https://liulei-root.github.io/atom.xml" rel="self"/>
   
   <link href="https://liulei-root.github.io/"/>
-  <updated>2022-03-29T08:42:38.061Z</updated>
+  <updated>2022-04-18T08:31:32.822Z</updated>
   <id>https://liulei-root.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java高级 正向代理和反向代理理解(小白必看 最好懂的教程)</title>
+    <link href="https://liulei-root.github.io/2022/041810198.html"/>
+    <id>https://liulei-root.github.io/2022/041810198.html</id>
+    <published>2022-04-18T07:16:32.000Z</published>
+    <updated>2022-04-18T08:31:32.822Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h2 id=&quot;Java高级-正向代理和反向代理理解-小白必看-最好懂的教程&quot;&gt;&lt;a href=&quot;#Java高级-正向代理和反向代理理解-小白必看-最好懂的教程&quot; class=&quot;headerlink&quot; title=&quot;Java高级</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://liulei-root.github.io/categories/Linux/"/>
+    
+    
+    <category term="正向代理" scheme="https://liulei-root.github.io/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="反向代理" scheme="https://liulei-root.github.io/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+    <category term="运维" scheme="https://liulei-root.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="Linux" scheme="https://liulei-root.github.io/tags/Linux/"/>
+    
+    <category term="nginx" scheme="https://liulei-root.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机网络</title>
     <link href="https://liulei-root.github.io/2022/032928758.html"/>
     <id>https://liulei-root.github.io/2022/032928758.html</id>
     <published>2022-03-29T08:41:20.000Z</published>
-    <updated>2022-03-29T08:42:38.061Z</updated>
+    <updated>2022-03-29T08:42:55.360Z</updated>
     
     
       
@@ -108,7 +142,7 @@
     <link href="https://liulei-root.github.io/2021/10217153.html"/>
     <id>https://liulei-root.github.io/2021/10217153.html</id>
     <published>2021-10-21T07:19:11.000Z</published>
-    <updated>2021-10-21T07:22:57.734Z</updated>
+    <updated>2022-04-13T02:15:57.137Z</updated>
     
     
       
@@ -582,38 +616,6 @@
         
     <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2 id=&quot;Java进阶-谈谈MySQL数据库的学习思路&quot;&gt;&lt;a href=&quot;#Java进阶-谈谈MySQL数据库的学习思路&quot; class=&quot;headerlink&quot; title=&quot;Java进阶 谈谈MySQL数据库的学习思路&quot;&gt;&lt;/a&gt;Java进阶</summary>
-        
-      
-    
-    
-    
-    <category term="数据库" scheme="https://liulei-root.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="Java进阶" scheme="https://liulei-root.github.io/tags/Java%E8%BF%9B%E9%98%B6/"/>
-    
-    <category term="数据库" scheme="https://liulei-root.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    <category term="MySQL" scheme="https://liulei-root.github.io/tags/MySQL/"/>
-    
-    <category term="sql" scheme="https://liulei-root.github.io/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java进阶 MySQL的安装与卸载流程</title>
-    <link href="https://liulei-root.github.io/2021/041329010.html"/>
-    <id>https://liulei-root.github.io/2021/041329010.html</id>
-    <published>2021-04-13T03:13:00.000Z</published>
-    <updated>2021-04-13T08:31:11.547Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;Java进阶-MySQL的安装与卸载流程&quot;&gt;&lt;a href=&quot;#Java进阶-MySQL的安装与卸载流程&quot; class=&quot;headerlink&quot; title=&quot;Java进阶 MySQL的安装与卸载流程&quot;&gt;&lt;/a&gt;Java进阶</summary>
         
       
     
